@@ -1,14 +1,15 @@
 /* Load Github Font */
 @font-face {
-  font-family: 'Hubot Sans';
+  font-family: 'Mona Sans';
   src:
-    url('./assets/Hubot-Sans.woff2') format('woff2 supports variations'),
-    url('./assets/Hubot-Sans.woff2') format('woff2-variations');
+    url('./assets/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('./assets/Mona-Sans.woff2') format('woff2-variations');
   font-weight: 200 900;
   font-stretch: 75% 125%;
 }
+
 html {
-  font-family: 'Hubot Sans';
+  font-family: 'Mona Sans';
 }
 
 /* Global styles */
@@ -29,6 +30,11 @@ li {
   padding: 1rem;
   flex: 1;
   border: 1px solid #ccc;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 4rem;
 }
 
 .svg-inline--fa {
