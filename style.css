@@ -1,3 +1,20 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-default: white;
+    --fg-default: black;
+
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-default: black;
+
+    --fg-default: rgb(125, 133, 144);
+    --fg-link: rgb(255, 255, 255)
+  }
+}
+
+
 /* Load Github Font */
 @font-face {
   font-family: 'Mona Sans';
@@ -8,13 +25,26 @@
   font-stretch: 75% 125%;
 }
 
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Mona Sans';
 }
 
-/* Global styles */
-* {
-  box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 2rem;
+  color: var(--fg-default);
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 ul {
@@ -22,19 +52,26 @@ ul {
   flex-direction: column;
   list-style-type: none;
   gap: 1rem;
-  margin: 3rem;
+  margin: 3rem 0;
   padding: 0;
 }
 
 li {
   padding: 1rem;
   flex: 1;
-  border: 1px solid #ccc;
+  border: 1px solid var(--fg-default);
 }
 
 h1 {
   font-weight: 800;
   font-size: 4rem;
+  margin: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3349f6 0%, #ff5121 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .svg-inline--fa {
@@ -46,5 +83,16 @@ h1 {
 @media screen and (min-width: 768px) {
   ul {
     flex-direction: row;
+  }
+}
+
+
+/* Dark Mode Theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-default);
+  }
+  a {
+    color: var(--fg-link);
   }
 }
