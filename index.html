@@ -13,6 +13,7 @@
     <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-RTs6cAeLGZoCPlBxXNxYfQnVIrvTagXGxIhrXFjWgp4i4E5urdGFLlkfbsk1Nd+L" crossorigin="anonymous"></script>
 </head>
 <body>
+    <button id="toggleTheme" onclick="toggleTheme()">toggle</button>
     <h1 class="gradient-text">Brett Baisley | dev</h1>
     <ul>
         <li>
@@ -33,4 +34,18 @@
         </li>
     </ul>
 </body>
+<script>
+    function toggleTheme() {
+        console.log("toggle theme clicked");
+        currentTheme = document.documentElement.getAttribute('data-theme');
+        if (!currentTheme) {
+            window.matchMedia("(prefers-color-scheme: dark)").matches ? document.documentElement.setAttribute('data-theme', 'light') : document.documentElement.setAttribute('data-theme', 'dark');
+        } else if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+        
+    }
+</script>
 </html>

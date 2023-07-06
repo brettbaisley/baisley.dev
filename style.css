@@ -1,8 +1,19 @@
+html[data-theme="light"] {
+  --bg-background: white;
+  --bg-surface: rgba(0, 0, 0, .025);
+
+
+  --fg-default: 121212;
+  --fg-link: hsl(199, 78%, 57%);
+  --fg-link-hover: hsl(199, 78%, 47%);
+  --fg-headings: rfb(225, 225, 225);
+
+  --fg-primary: #3cb1e7;
+}
 @media (prefers-color-scheme: light) {
   :root {
     --bg-background: white;
     --bg-surface: rgba(0, 0, 0, .025);
-
 
     --fg-default: 121212;
     --fg-link: hsl(199, 78%, 57%);
@@ -10,8 +21,18 @@
     --fg-headings: rfb(225, 225, 225);
 
     --fg-primary: #3cb1e7;
-
   }
+}
+html[data-theme="dark"] {
+  --bg-background: black;
+  --bg-surface: rgba(255, 255, 255, .08);
+  
+  --fg-default: rgb(225, 225, 225);
+  --fg-link: rgba(255, 255, 255, 1);
+  --fg-link-hover: rgba(255, 255, 255, .85);
+  --fg-headings: rfb(225, 225, 225);
+
+  --fg-primary: hsl(199, 78%, 53%);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -25,9 +46,12 @@
     --fg-headings: rfb(225, 225, 225);
 
     --fg-primary: hsl(199, 78%, 53%);
-
   }
 }
+
+
+
+
 
 
 /* Load Github Font */
@@ -115,12 +139,12 @@ h1 {
 
 @media screen and (min-width: 600px) {
   ul {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 @media screen and (min-width: 900px) {
   ul {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
