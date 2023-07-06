@@ -48,10 +48,10 @@
 h1,
 h2,
 h3,
-h4 {
+h4,
+ul {
   margin: 0;
   padding: 0;
-  color: var(--fg-headings);
 }
 
 body {
@@ -74,12 +74,9 @@ a:hover {
 
 ul {
   display: grid;
-  grid-template-columns: 1fr;
-
   list-style-type: none;
   gap: 1rem;
-  margin: 3rem 0;
-  padding: 0;
+  grid-template-columns: 1fr;
 }
 
 li {
@@ -95,8 +92,18 @@ h1 {
   font-size: clamp(2.25rem, 9vw, 6rem);
 }
 
+.pill {
+  background-color: var(--bg-surface);
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
 .gradient-text {
-  background: linear-gradient(90deg, #3349f6 0%, #ff5121 100%);
+  background: linear-gradient(90deg, #3349f6 0%, #21ffd3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
