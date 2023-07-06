@@ -1,7 +1,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --bg-background: white;
-    --bg-surface: rgba(0, 0, 0, .03);
+    --bg-surface: rgba(0, 0, 0, .025);
 
 
     --fg-default: 121212;
@@ -16,7 +16,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-background: black;
-    --bg-surface: rgba(255, 255, 255, .07);
+    --bg-surface: rgba(255, 255, 255, .08);
     /* --bg-surface: #121212; */
 
     --fg-default: rgb(225, 225, 225);
