@@ -8,6 +8,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-default: black;
+    --bg-surface: rgba(255, 255, 255, .075);
+    /* --bg-surface: #121212; */
 
     --fg-default: rgb(125, 133, 144);
     --fg-link: rgb(255, 255, 255)
@@ -30,6 +32,14 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-family: 'Mona Sans';
 }
@@ -48,8 +58,9 @@ a:hover {
 }
 
 ul {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+
   list-style-type: none;
   gap: 1rem;
   margin: 3rem 0;
@@ -57,15 +68,14 @@ ul {
 }
 
 li {
-  padding: 1rem;
-  flex: 1;
+  background-color: var(--bg-surface);
+  padding: 2rem;
   border: 1px solid var(--fg-default);
 }
 
 h1 {
   font-weight: 800;
-  font-size: 4rem;
-  margin: 0;
+  font-size: clamp(2.25rem, 9vw, 6rem);
 }
 
 .gradient-text {
@@ -79,10 +89,14 @@ h1 {
 }
 
 
-/* media query to change flex direct to row */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   ul {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 900px) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
