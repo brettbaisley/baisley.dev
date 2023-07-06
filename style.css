@@ -1,18 +1,31 @@
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-default: white;
-    --fg-default: black;
+    --bg-background: white;
+    --bg-surface: rgba(0, 0, 0, .025);
+
+
+    --fg-default: 121212;
+    --fg-link: hsl(199, 78%, 57%);
+    --fg-link-hover: hsl(199, 78%, 47%);
+    --fg-headings: rfb(225, 225, 225);
+
+    --fg-primary: #3cb1e7;
 
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-default: black;
+    --bg-background: black;
     --bg-surface: rgba(255, 255, 255, .075);
     /* --bg-surface: #121212; */
 
-    --fg-default: rgb(125, 133, 144);
-    --fg-link: rgb(255, 255, 255)
+    --fg-default: rgb(225, 225, 225);
+    --fg-link: rgba(255, 255, 255, 1);
+    --fg-link-hover: rgba(255, 255, 255, .85);
+    --fg-headings: rfb(225, 225, 225);
+
+    --fg-primary: hsl(199, 78%, 53%);
+
   }
 }
 
@@ -38,22 +51,24 @@ h3,
 h4 {
   margin: 0;
   padding: 0;
-}
-
-html {
-  font-family: 'Mona Sans';
+  color: var(--fg-headings);
 }
 
 body {
+  color: var(--fg-default);
+  font-family: 'Mona Sans';
+  font-size: 1.25rem;
+  line-height: 1.5;
   margin: 0;
   padding: 2rem;
-  color: var(--fg-default);
 }
 
 a {
+  color: var(--fg-link);
   text-decoration: none;
 }
 a:hover {
+  color: var(--fg-link-hover);
   text-decoration: underline;
 }
 
@@ -70,7 +85,9 @@ ul {
 li {
   background-color: var(--bg-surface);
   padding: 2rem;
-  border: 1px solid var(--fg-default);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 h1 {
@@ -104,7 +121,7 @@ h1 {
 /* Dark Mode Theme */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--bg-default);
+    background-color: var(--bg-background);
   }
   a {
     color: var(--fg-link);
