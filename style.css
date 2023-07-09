@@ -1,7 +1,7 @@
+/* Default, White Mode Theme */
 :root {
   --bg-background: white;
   --bg-surface: rgba(0, 0, 0, .025);
-
 
   --fg-default: 121212;
   --fg-link: hsl(199, 78%, 57%);
@@ -10,8 +10,9 @@
 
   --fg-primary: #3cb1e7;
 }
-
-html[data-theme="dark"] {
+/* Perfers Dark Mode Theme */
+@media (prefers-color-scheme: dark) {
+  :root {
   --bg-background: black;
   --bg-surface: rgba(255, 255, 255, .08);
   
@@ -21,29 +22,8 @@ html[data-theme="dark"] {
   --fg-headings: rfb(225, 225, 225);
 
   --fg-primary: hsl(199, 78%, 53%);
+  }
 }
-
-#toggleTheme {
-  font-size: 1.75rem;
-  border: none;
-  background-color: transparent;
-  padding: .5rem;
-  color: var(--fg-default);
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-html[data-theme="dark"] button .fa-moon {
-  display: none;
-}
-html[data-theme="light"] button .fa-sun {
-  display: none;
-}
-
-
-
-
-
 
 
 /* Load Github Font */
@@ -71,6 +51,7 @@ ul {
 }
 
 body {
+  background-color: var(--bg-background);
   color: var(--fg-default);
   font-family: 'Mona Sans';
   font-size: 1.25rem;
@@ -78,9 +59,11 @@ body {
   margin: 0;
   padding: 2rem;
 }
+
 h2 a {
   margin-left: 1rem;
 }
+
 a {
   color: var(--fg-link);
   text-decoration: none;
@@ -135,16 +118,5 @@ h1 {
 @media screen and (min-width: 900px) {
   ul {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  }
-}
-
-
-/* Dark Mode Theme */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--bg-background);
-  }
-  a {
-    color: var(--fg-link);
   }
 }
