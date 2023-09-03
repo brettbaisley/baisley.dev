@@ -82,10 +82,14 @@ ul {
 
 li {
   background-color: var(--bg-surface);
-  padding: 2rem;
   border-radius: 1rem;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 2rem;
+}
+
+li > * {
+  min-width: 0;
 }
 
 h1 {
@@ -93,14 +97,19 @@ h1 {
   font-size: clamp(2.25rem, 9vw, 6rem);
 }
 
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
 .pill {
   background-color: var(--bg-surface);
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
-  margin-right: 0.5rem;
 }
 
 .gradient-text {
@@ -112,11 +121,11 @@ h1 {
 
 @media screen and (min-width: 600px) {
   ul {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 }
 @media screen and (min-width: 900px) {
   ul {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
