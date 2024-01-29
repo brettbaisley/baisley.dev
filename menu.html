@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        body {
+  font-family: "Arial";
+}
+
+.visuallyhidden {
+
+}
+
+header {
+  background: #015289;
+  padding: 1em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 700px){
+    flex-direction: row;    
+  }
+}
+header a {
+  color: inherit;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+
+    & > li {
+        width: 100%;
+
+        & > a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+        & > a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+button {
+  padding: 8px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 1em;
+  background: transparent;
+  color: #fff;
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+button:focus, button:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+
+
+.js .nav-list {
+  display: none;
+}
+
+.js button {
+  display: block;
+}
+
+.nav-list.is-active {
+  display: flex;
+}
+
+@media (min-width: 700px) {
+    .nav-list {
+        flex-direction: row;  
+    }
+    
+    .js .nav-list {
+        display: flex;
+    }
+    
+    .js button {
+        display: none;
+    }
+}
+    
+        /*
+            https://www.a11ymatters.com/pattern/mobile-nav/#final-demo
+        */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="#">LOGO</a>
+        </h1>
+
+        <nav role="navigation">
+            <button id="toggle" aria-expanded="false">Menu</button>
+            <ul id="menu" class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+    </section>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+    </section>
+
+    <script>
+        document.documentElement.className += 'js';
+
+        var toggle = document.querySelector('#toggle');
+        var menu = document.querySelector('#menu');
+        var menuItems = document.querySelectorAll('#menu li a');
+
+        toggle.addEventListener('click', function(){
+            if (menu.classList.contains('is-active')) {
+                this.setAttribute('aria-expanded', 'false');
+                menu.classList.remove('is-active');
+            } else {
+                menu.classList.add('is-active'); 
+                this.setAttribute('aria-expanded', 'true');
+                //menuItems[0].focus();
+            }
+        });
+    </script>
+</body>
+
+</html>
