@@ -43,8 +43,13 @@ h1 {
     justify-content: space-between;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1rem 0 0 0;
     gap: 1rem;
+
+    /* make this animate open when toggled */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    
 
     & > li {
         width: 100%;
@@ -82,7 +87,7 @@ button:focus, button:hover {
 
 
 .js .nav-list {
-  display: none;
+  max-height: 0;
 }
 
 .js button {
@@ -90,16 +95,12 @@ button:focus, button:hover {
 }
 
 .nav-list.is-active {
-  display: flex;
+    max-height: 250px;
 }
 
 @media (min-width: 700px) {
     .nav-list {
         flex-direction: row;  
-    }
-    
-    .js .nav-list {
-        display: flex;
     }
     
     .js button {
