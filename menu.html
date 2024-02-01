@@ -45,10 +45,10 @@ h1 {
     padding: 0;
     margin: 0;
     gap: 1rem;
-
+    
     /* make this animate open when toggled */
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: all 0.3s ease-out;
     
 
     & > li {
@@ -87,7 +87,14 @@ button:focus, button:hover {
 
 
 .js .nav-list {
-  max-height: 0;
+  /* max-height: 0; */
+  position: absolute;
+  width: 100%;
+  left: calc(-2rem - 100%);
+  padding: 1rem;
+  backdrop-filter: blur(3px);
+  background-color: rgba(225,225,225,.75);
+  color: black;
 }
 
 .js button {
@@ -95,11 +102,22 @@ button:focus, button:hover {
 }
 
 .nav-list.is-active {
-    max-height: 250px;
+    /* max-height: 250px; */
+    left: 0;
 }
 
 @media (min-width: 700px) {
+
+    .js .nav-list {
+        position: relative;
+        left: 0;
+        width: auto;
+        background: transparent;
+        color: inherit;
+        backdrop-filter: none;
+    }
     .nav-list {
+        
         flex-direction: row;  
     }
     
