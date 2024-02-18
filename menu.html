@@ -6,65 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Menu</title>
     <style>
-        body {
+* {
+        box-sizing: border-box;
+}
+
+body {
   font-family: "Arial";
-}
-
-.visuallyhidden {
-
-}
-
-header {
-  background: #015289;
-  padding: 1em;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media screen and (min-width: 700px){
-    flex-direction: row;    
-  }
-}
-header a {
-  color: inherit;
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 1.5em;
   margin: 0;
   padding: 0;
 }
 
-.nav-list {
+.site-header {
+  background: navy; 
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.header-menu {
+    position: fixed;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* height: 90vh; */
+    padding-right: 0;
+    transform-origin: top right;
+    padding-left: 24px;
+    width: 100%;
+
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    transition-duration: 500ms;
+    transition-property: opacity, visibility, transform;
+}
+.header-menu:not(.open) {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.9) translateY(-24px);
+}
+
+.header-menu-items {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 1rem;
-    
-    /* make this animate open when toggled */
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-    
+    border-radius: 5px;
+    background-color: gray;
+    width: 100%;
+    padding: 2rem;
 
-    & > li {
-        width: 100%;
-
-        & > a {
-            color: inherit;
+    & li {
+        padding: 12px;
+        
+        & a {
             text-decoration: none;
-            display: block;
-            width: 100%;
+            color: white;
+            font-size: 1.125rem;
         }
-        & > a:hover {
-            text-decoration: underline;
+        & a:hover {
+            color: gray;
         }
     }
 }
+
+
+
+
+
+
 
 button {
   padding: 8px;
@@ -73,10 +82,6 @@ button {
   font-size: 1em;
   background: transparent;
   color: #fff;
-  display: none;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
 }
 button:focus, button:hover {
   background: #fff;
@@ -86,45 +91,10 @@ button:focus, button:hover {
 
 
 
-.js .nav-list {
-  /* max-height: 0; */
-  position: absolute;
-  width: 100%;
-  left: calc(-2rem - 100%);
-  padding: 1rem;
-  backdrop-filter: blur(3px);
-  background-color: rgba(225,225,225,.75);
-  color: black;
-}
 
-.js button {
-  display: block;
-}
 
-.nav-list.is-active {
-    /* max-height: 250px; */
-    left: 0;
-}
 
-@media (min-width: 700px) {
 
-    .js .nav-list {
-        position: relative;
-        left: 0;
-        width: auto;
-        background: transparent;
-        color: inherit;
-        backdrop-filter: none;
-    }
-    .nav-list {
-        
-        flex-direction: row;  
-    }
-    
-    .js button {
-        display: none;
-    }
-}
     
         /*
             https://www.a11ymatters.com/pattern/mobile-nav/#final-demo
@@ -133,19 +103,19 @@ button:focus, button:hover {
 </head>
 
 <body>
-    <header>
-        <h1>
-            <a href="#">LOGO</a>
-        </h1>
-
-        <nav role="navigation">
+    <header class="site-header">
+        <div class="header-row">
+            <div>Sign In</div>
+            <div>Logo</div>
             <button id="toggle" aria-expanded="false">Menu</button>
-            <ul id="menu" class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">FAQ</a></li>
+        </div>
+        <nav class="header-menu open">
+            <ul class="header-menu-items">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
         </nav>
     </header>
@@ -153,11 +123,18 @@ button:focus, button:hover {
 
 
     <section>
+        <p id="home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p id="about">About  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+    </section>
+    <section>
+        <p id="contact">Contact  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p id="work">Work Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
+        <p id="faq">FAQ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
     </section>
     <section>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusamus voluptatum hic, molestiae quisquam obcaecati sint soluta recusandae in, adipisci, doloremque iure sequi exercitationem minima. Quod temporibus illo nemo sequi?</p>
@@ -168,20 +145,25 @@ button:focus, button:hover {
     </section>
 
     <script>
-        document.documentElement.className += 'js';
-
         var toggle = document.querySelector('#toggle');
-        var menu = document.querySelector('#menu');
-        var menuItems = document.querySelectorAll('#menu li a');
+        var menu = document.querySelector('.header-menu');
+        var menuItems = document.querySelector('.header-menu-items');
 
         toggle.addEventListener('click', function(){
-            if (menu.classList.contains('is-active')) {
+            if (menu.classList.contains('open')) {
                 this.setAttribute('aria-expanded', 'false');
-                menu.classList.remove('is-active');
+                menu.classList.remove('open');
             } else {
-                menu.classList.add('is-active'); 
+                menu.classList.add('open'); 
                 this.setAttribute('aria-expanded', 'true');
                 //menuItems[0].focus();
+            }
+        });
+
+        menuItems.addEventListener('click', function(){
+            if (menu.classList.contains('open')) {
+                this.setAttribute('aria-expanded', 'false');
+                menu.classList.remove('open');
             }
         });
     </script>
