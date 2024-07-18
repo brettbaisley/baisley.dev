@@ -1,0 +1,24 @@
+---
+title: 'aaabbb'
+pubDate: 2024-04-25
+description: 'It has been a while since I last posted. I have been busy with work and family, but I am back and ready to write more.'
+author: 'Brett Baisley'
+image:
+    url: 'family.jpg'
+    alt: 'The Astro logo on a dark background with a pink glow.'
+tags: ["astro", "blogging", "learning in public"]
+---
+import { Image } from 'astro:assets';
+import familyImg from './family.jpg';
+
+ This is only a test of my first MDX page
+
+ Here is my family!
+
+ <Image 
+    src={familyImg} 
+    widths={ [240, 540, 720] }
+    sizes={ `(max-width: 360px) 240px,  (max-width: 720px) 540px, (max-width: 1600px) 720px` }
+    alt='Some alternative words'
+ />
+
