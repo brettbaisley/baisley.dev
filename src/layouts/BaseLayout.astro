@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Brett Baisley's personal blog. Created in Astro, this is a place to share some random thoughts with the rest of the world." />
+    <meta name="author" content="Brett Baisley" />
+    <meta name="keywords" content="astro, blog, personal, brett, baisley" />    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#ffffff">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <h1>{pageTitle}</h1>
+    <slot />
+  </body>
+</html>

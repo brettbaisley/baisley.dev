@@ -1,0 +1,188 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baisley.dev</title>
+    <link rel="canonical" href="https://baisley.dev/" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+    <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/light.js" integrity="sha384-6EhWHErkaXt19GTK7f+5rRc16ekdzvItcFycGZi1GS/AycADXj7L2tkZ9z2O71ot" crossorigin="anonymous"></script>
+    <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-RTs6cAeLGZoCPlBxXNxYfQnVIrvTagXGxIhrXFjWgp4i4E5urdGFLlkfbsk1Nd+L" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 class="gradient-text">Brett Baisley | dev</h1>
+    <ul>
+        <li>
+            <h2><i class="fal fa-blog"></i><a href="/blog">Blog</a></h2>
+            <p>Just a small personal blog that doesn't really contain anything useful ... yet!</p>
+            <div class="pills">
+                <span class="pill">Gatsby</span>
+            </div>
+        </li>
+        <li>
+            <h2><i class="fal fa-calendar-day"></i><a href="http://days.baisley.dev">Days</a></h2>
+            <p>An Azure static web app (SWA) built to allow my kids to see how long until a few special days.</p>
+            <div class="pills">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">Javascript</span>
+            </div>
+        </li>
+        <li>
+            <h2><i class="fal fa-gift"></i><a href="http://gifts.baisley.dev">Gifts</a></h2>
+            <p>A registry/wish-list style React app, to remember some gifts my kids said they wanted.</p>
+            <div class="pills">
+                <span class="pill">React</span>
+                <span class="pill">CosmosDB</span>
+        </div>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+
+
+<style>
+/* Default, White Mode Theme */
+:root {
+  --bg-background: white;
+  --bg-surface: rgba(0, 0, 0, .025);
+
+  --fg-default: 121212;
+  --fg-link: hsl(199, 78%, 57%);
+  --fg-link-hover: hsl(199, 78%, 47%);
+  --fg-headings: rfb(225, 225, 225);
+
+  --fg-primary: #3cb1e7;
+}
+/* Perfers Dark Mode Theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+  --bg-background: black;
+  --bg-surface: rgba(255, 255, 255, .08);
+  
+  --fg-default: rgb(225, 225, 225);
+  --fg-link: rgba(255, 255, 255, 1);
+  --fg-link-hover: rgba(255, 255, 255, .85);
+  --fg-headings: rfb(225, 225, 225);
+
+  --fg-primary: hsl(199, 78%, 53%);
+  }
+}
+
+
+/* Load Github Font */
+@font-face {
+  font-family: 'Mona Sans';
+  src:
+    url('/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('/fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-background);
+  color: var(--fg-default);
+  font-family: 'Mona Sans';
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 2rem;
+}
+
+h2 a {
+  margin-left: 1rem;
+}
+
+a {
+  color: var(--fg-link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--fg-link-hover);
+  text-decoration: underline;
+}
+
+ul {
+  display: grid;
+  list-style-type: none;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+li {
+  background-color: var(--bg-surface);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 2rem;
+}
+
+li > * {
+  min-width: 0;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(2.25rem, 9vw, 6rem);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.pill {
+  background-color: var(--bg-surface);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3349f6 0%, #21ffd3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@media screen and (min-width: 600px) {
+  ul {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+@media screen and (min-width: 900px) {
+  ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+</style>

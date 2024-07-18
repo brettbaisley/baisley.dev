@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const pageTitle = "Brett's Blog";
+const allPosts = await getCollection("posts");
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+---
+<BaseLayout pageTitle={pageTitle}>
+  <p>Written by Brett Baisley. A support engineer with 20 years experience, who started blogging as he incorrectly thought the rest of the world was interested in his thoughts and ideas.</p>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} text={post.data} />
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 700px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
