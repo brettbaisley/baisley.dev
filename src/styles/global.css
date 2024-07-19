@@ -77,6 +77,7 @@ h6 {
   color: var(--text-color-headline);
   font-weight: 700;
   margin: 0;
+  line-height: 1.125;
 }
 
 h1 {
@@ -87,6 +88,7 @@ h1 {
 .gradient-text {
   background: linear-gradient(90deg, #3349f6 0%, #21ffd3 100%);
   width: max-content;
+  max-width: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
