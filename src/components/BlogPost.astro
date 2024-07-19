@@ -2,9 +2,7 @@
 const { title, url, pubDate, text } = Astro.props
 ---
 <li>
-    <a href={url}>
-        <h2>{title}</h2>
-    </a> 
+    <h2><a href={url}>{title}</a></h2>
     <span class="date">{pubDate.toLocaleDateString()}</span>
     <p class="text">{text.description}</p>
 </li>
