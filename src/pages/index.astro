@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css'
 ---
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
 </head>
 <body>
     <h1 class="gradient-text">Brett Baisley | dev</h1>
-    <ul>
+    <ul class="card-list">
         <li>
             <h2><i class="fal fa-blog"></i><a href="/blog">Blog</a></h2>
             <p>Just a small personal blog that doesn't really contain anything useful ... yet!</p>
@@ -49,10 +50,22 @@
 </body>
 </html>
 
-
-
-
 <style>
+.card-list {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+
+  & li {
+    background-color: var(--bg-surface);
+    border-radius: 1rem;
+    padding: 2rem;
+ }
+}
+</style>
+
+
+<!-- <style>
 /* Default, White Mode Theme */
 :root {
   --bg-background: white;
@@ -186,4 +199,4 @@ h1 {
   }
 }
 
-</style>
+</style> -->

@@ -1,10 +1,16 @@
-
+/* Default, Dark Mode */
 :root {
   --blue: #1e90ff;
   --white: #ffffff;
   --orange: #ff9776;
   --gray: #d0d0d0;
   --lightgray: #dddddd;
+  --black: #000000;
+
+  --bg-color: rgb(15,20,25);
+  --bg-surface: rgb(22,27,34);
+  --text-color: rgb(140,150,160);
+  --text-color-headline: rgb(230,235,240);
 
   --color-primary: var(--blue);
   --color-secondary: var(--white);
@@ -17,6 +23,16 @@
   --color-tag-secondary: var(--gray);
 }
 
+  /* User set: Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: rgb(230,235,240);
+    --bg-surface: rgb(22,27,34);
+    --text-color: rgb(15,20,25);
+    --text-color-headline: rgb(230,235,240);
+  }
+}
+
 
 
 * {
@@ -24,7 +40,8 @@
 }
 
 html {
-    background-color: var(--white);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: sans-serif;
 }
   
@@ -55,8 +72,9 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    font-weight: 700;
+  color: var(--text-color-headline);
+  font-weight: 700;
+  margin: 0;
 }
 
 h1 {
@@ -108,27 +126,25 @@ h1 {
     background-color: #ff9776;
   }
   
-  @media screen and (min-width: 636px) {
-    body {
-      font-size: 1.5rem;
-    }
-
-    .nav-links {
-      margin-left: 5em;
-      display: block;
-      position: static;
-      width: auto;
-      background: none;
-    }
-  
-    .nav-links a {
-      display: inline-block;
-      padding: 15px 20px;
-    }
-    
-    .hamburger {
-      display: none;
-    }
+@media screen and (min-width: 636px) {
+  body {
+    font-size: 1.5rem;
   }
 
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
   
+  .hamburger {
+    display: none;
+  }
+}
