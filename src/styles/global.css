@@ -9,6 +9,8 @@
 
   --bg-color: rgb(15,20,25);
   --bg-surface: rgb(22,27,34);
+  --bg-surface: rgba(133, 133, 133, 0.15);
+
   --text-color: rgb(140,150,160);
   --text-color-headline: rgb(230,235,240);
 
@@ -80,6 +82,15 @@ h6 {
 h1 {
     font-size: clamp(2.25rem, 9vw, 6rem);
     font-weight: 900;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3349f6 0%, #21ffd3 100%);
+  width: max-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 

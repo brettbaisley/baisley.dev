@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 const { pageTitle } = Astro.props;
+
+import Header from '../components/Header.astro';
 ---
 
 <html lang="en">
@@ -15,9 +17,12 @@ const { pageTitle } = Astro.props;
     <meta name="theme-color" content="#ffffff">
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
+    <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/light.js" integrity="sha384-6EhWHErkaXt19GTK7f+5rRc16ekdzvItcFycGZi1GS/AycADXj7L2tkZ9z2O71ot" crossorigin="anonymous"></script>
+    <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-RTs6cAeLGZoCPlBxXNxYfQnVIrvTagXGxIhrXFjWgp4i4E5urdGFLlkfbsk1Nd+L" crossorigin="anonymous"></script>
+
   </head>
   <body>
-    <h1>{pageTitle}</h1>
+    <Header pageTitle={pageTitle}></Header>
     <slot />
   </body>
 </html>
