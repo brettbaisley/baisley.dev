@@ -35,10 +35,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <style>
 .card-list {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   list-style-type: none;
   gap: 1rem;
+  padding: 0;
+
+  @media (min-width: 1000px) {
+      flex-direction: row;
+  }
 
   & li {
+    flex: 1;
     background-color: var(--bg-surface);
     border-radius: 1rem;
     padding: 2rem;
