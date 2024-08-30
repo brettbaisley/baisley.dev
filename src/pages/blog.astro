@@ -9,7 +9,8 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <p>Written by Brett Baisley. A support engineer with 20 years experience, who started blogging as he incorrectly thought the rest of the world was interested in his thoughts and ideas.</p>
+  <p>This is the personal blog written by <em>Brett Baisley</em>. Who is that? Well, not only is he a fantastic guy, he is a support engineer with 20+ years experience. He started blogging as he incorrectly thought the rest of the world was interested in his thoughts. Poor guy, how wrong he was...</p>
+
   <ul>
     {
       allPosts.map((post) => (
@@ -23,16 +24,12 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 <style>
   ul {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 2rem;
     padding: 0;
     max-width: 1400px;
     margin: 0 auto;
   }
 
-  @media (min-width: 700px) {
-    ul {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+  
 </style>
