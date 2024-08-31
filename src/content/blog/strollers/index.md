@@ -1,5 +1,6 @@
 ---
 title: 'What is the Best Stroller to Buy?'
+subtitle: 'What we know now that we wished we knew then.'
 pubDate: 2023-07-02
 description: 'This is my unofficial review of what I believe is the best stroller, or at least type of stroller, to buy.'
 author: 'Brett Baisley'

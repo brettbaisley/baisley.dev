@@ -8,21 +8,22 @@ import Header from '../components/Header.astro';
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="canonical" href="https://baisley.dev" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content="Brett Baisley's personal blog. Created in Astro, this is a place to share some random thoughts with the rest of the world." />
     <meta name="author" content="Brett Baisley" />
     <meta name="keywords" content="astro, blog, personal, brett, baisley" />    
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#0f1419">
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
-    <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/light.js" integrity="sha384-6EhWHErkaXt19GTK7f+5rRc16ekdzvItcFycGZi1GS/AycADXj7L2tkZ9z2O71ot" crossorigin="anonymous"></script>
-    <script defer src="https://pro.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-RTs6cAeLGZoCPlBxXNxYfQnVIrvTagXGxIhrXFjWgp4i4E5urdGFLlkfbsk1Nd+L" crossorigin="anonymous"></script>
-
+    <script defer src="https://kit.fontawesome.com/ce0ffcb549.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <Header pageTitle={pageTitle}></Header>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

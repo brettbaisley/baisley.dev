@@ -1,5 +1,6 @@
 ---
 title: 'Merry Christmas!'
+subtitle: ''
 pubDate: 2023-12-25
 description: 'A simple Merry Christmas message.'
 author: 'Brett Baisley'

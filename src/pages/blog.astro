@@ -14,7 +14,7 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   <ul>
     {
       allPosts.map((post) => (
-        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} text={post.data} />
+        <BlogPost url={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} text={post.data} />
       ))
     }
   </ul>

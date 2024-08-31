@@ -1,5 +1,6 @@
 ---
 title: 'The Bloginator'
+subtitle: ''
 pubDate: 2022-11-07
 description: 'The first ever posting of my new blog!'
 author: 'Brett Baisley'

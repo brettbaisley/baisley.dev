@@ -1,5 +1,6 @@
 ---
 title: 'Happy New Year!'
+subtitle: ''
 pubDate: 2023-12-30
 description: 'A heartfelt Happy New Year message.'
 author: 'Brett Baisley'
