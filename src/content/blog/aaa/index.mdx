@@ -18,10 +18,8 @@ import familyImg from './family.jpg';
 
  <Image 
     src={familyImg} 
-    widths={ [240, 540, 720, 1000] }
-    sizes={ `(max-width: 360px) 240px,  (max-width: 720px) 540px, (max-width: 1600px) 720px 1000px` }
-    alt='Some alternative words'
-    width="500"
-    
+    widths={ [240, 540, 720, 1000, familyImg.width] }
+    sizes={ `(max-width: 360px) 240px,  (max-width: 720px) 540px, (max-width: 1200px) 720px, ${familyImg.width}px` }
+    alt='Some alternative words'    
  />
 
