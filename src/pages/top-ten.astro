@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Brett's Blog";
+---
+<BaseLayout pageTitle={pageTitle}>
+    <p><em>The Late Show with David Letterman</em> website used to run an online contest where each week they would post a topic and people could submit their own "Top Ten" entries. My entry was chosen for the #3 spot, netting me a sweet <em>Late Show</em> t-shirt. Enjoy!</p>
+    
+    <h1>Top Ten Reasons New York City is Excited About the World Series</h1>
+    <h2>With the New York Yankees and the New York Mets in the World Series, the Big Apple is abuzz with excitement. Here are the top ten reasons New York City is excited about the World Series:</h2>
+    <ol class="top-ten" reversed>
+        <li>Finally, a topic to break awkward tension with the mugger. <span>Mike A., Marion, IA</span></li>
+        <li>If player breaks his bat, can ask to borrow a fan's. <span>John A., Brooklyn, NY</span></li>
+        <li>TV viewers outside New York now free to watch CBS's exciting fall schedule. <span>Bob B., West Chester, OH</span></li>
+        <li>Easy to get tickets simply by removing them from dead subway patron's pockets. <span>Mike R., Fredericton, NB, Canada</span></li>
+        <li>West Nile Virus renamed World Series Fever. <span>Alex R., Stamford, CT</span></li>
+        <li>Many long, lingering shots of Don Zimmer on TV. <span>Steve V., Portland, OR</span></li>
+        <li>You can get mugged after all seven games instead of just three or four. <span>Brian O., Rochester</span></li>
+        <li class="highlight">Hookers in Times Square don't have to leave town. <span>Brett B., Trout Brook, NB, Canada</span></li>
+        <li>All this attention is finally putting New York on the map. <span>Rob D., Cary, IL</span></li>
+        <li>It's quite touching to hear 56,000 pickpockets, muggers and murderers sing <em>Take Me Out To The Ball Game</em> on national TV. <span>Douglas Q., Grayland, WA</span></li>
+    </ol>
+
+    <p>October 19, 2000</p>
+</BaseLayout>
+
+
+
+<style>
+    .top-ten {
+        font-weight: 300;
+    }
+
+    .highlight {
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    h2 {
+        font-size: 1.375rem;
+        font-weight: 300;
+        margin: 1rem 0;
+    }
+
+    span {
+        font-style: italic;
+    }
+</style>
