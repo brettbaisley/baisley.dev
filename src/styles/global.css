@@ -7,12 +7,12 @@
   --lightgray: #dddddd;
   --black: #000000;
 
-  --bg-color: rgb(15, 20, 25);
+  --bg-color: #010101;
   --bg-surface: rgb(22,27,34);
   --bg-surface: rgba(133, 133, 133, 0.15);
 
-  --text-color: rgb(140,150,160);
-  --text-color-headline: rgb(230,235,240);
+  --text-color: #a1a1a6;
+  --text-color-headline: #f5f5f5;
 
   --link-color: rgb(50,130,245);
 

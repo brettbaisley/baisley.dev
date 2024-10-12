@@ -8,49 +8,46 @@ const pageTitle = "Brett's Blog";
 <BaseLayout pageTitle={pageTitle}></BaseLayout>
   <article>
     <header class="article-header">
-      <h1 class="article-title">{frontmatter.title}</h1>
-      <h2 class="article-subtitle">{frontmatter.subtitle}</h2>
-      <p class="article-author">Published on {new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })} by <em>{frontmatter.author}</em></p>
+      <div class="article-eyebrow"></div>
+      <h1 class="article-headline">{frontmatter.title}</h1>
+      <div class="article-subheadline">{frontmatter.subtitle || 'Some text'}</div>
+      <div class="article-meta">
+        By <em>{frontmatter.author}</em> on {new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}
+      </div>
     </header>
-
-    <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
-
-    <slot />
+    <section class="article-content">
+      <slot />
+    </section>
   </article>
 </BaseLayout>
 
 <style>
   em {
-    font-weight: 900;
+    color: var(--text-color-headline);
     font-style: normal;
   }
 
   article {
-    max-width: 70ch;
+    max-width: 80ch;
     margin: 0 auto;
   }
 
-  .article-header {
-    border-bottom: 1px solid #d9d9d9;
+  .article-header > * {
+    margin-top: 1rem;
   }
-
-  .article-title {
-    font-size: 2.25rem;
+  
+  .article-headline {
+    color: var(--text-color-headline);
+    font-size: 3rem;
     font-weight: 600;
-    margin: 2rem 0;
     line-height: 1;
   }
 
-  .article-subtitle {
+  .article-subheadline {
     font-size: 1.375rem;
     font-weight: 300;
-    margin: 2rem 0;
     line-height: 1.1;
-  }
 
-  .article-author {
-    font-size: .9rem;
-  }
-  
+  }  
 
 </style>
