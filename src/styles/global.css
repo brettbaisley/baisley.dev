@@ -16,6 +16,8 @@
 
   --link-color: rgb(50,130,245);
 
+  --separator: #8452c5;
+
   --color-primary: var(--blue);
   --color-secondary: var(--white);
   --color-tertiary: var(--orange);
@@ -40,22 +42,20 @@
 
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
 }
   
 body {
-    margin: 0 auto;
-    width: 100%;
-    /* max-width: 80ch; */
-    padding: 1rem;
-    line-height: 1.5;
-    font-size: 1.125rem;
+  line-height: 1.5;
+  font-size: 1.125rem;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -91,15 +91,20 @@ img {
 }
 
 
+nav a {
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
 a {
   color: var(--link-color);
   cursor: pointer;
-  text-decoration: none;
+  
 }
 a:hover,
 a:focus {
   color: var(--link-color);
-  text-decoration: underline;
 }
 a:visited {
   color: var(--link-color);

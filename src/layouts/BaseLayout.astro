@@ -3,7 +3,6 @@ import '../styles/global.css';
 const { pageTitle } = Astro.props;
 
 import Navbar from '../components/Navbar.astro';
-import Header from '../components/Header.astro';
 ---
 
 <html lang="en">
@@ -23,7 +22,6 @@ import Header from '../components/Header.astro';
   </head>
   <body>
     <Navbar></Navbar>
-    <Header pageTitle={pageTitle}></Header>
     <main>
       <slot />
     </main>

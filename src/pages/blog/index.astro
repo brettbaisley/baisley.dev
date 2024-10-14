@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+
+const pageTitle = "Brett's Blog";
+const allPosts = await getCollection("blog");
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="container">
+    <Header pageTitle={pageTitle}></Header>
+    <p>This is the personal blog written by <em>Brett Baisley</em>. Who is that? Well, not only is he a fantastic guy, he is a support engineer with 20+ years experience. He started blogging as he incorrectly thought the rest of the world was interested in his thoughts. Poor guy, how wrong he was...</p>
+
+    <ul class="post newest">
+      {
+        allPosts.slice(0, 3).map((post, index) => (
+          <>
+            <li>
+              <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
+            </li>
+            {index < 2 && <li class="vertical"></li>}
+          </>
+        ))
+      }
+    </ul>
+
+    <h2 class="recent-articles">Recent Articles</h2>
+    <ul class="post">
+      {
+        allPosts.slice(3).map((post, index, array) => (
+          <li>
+            <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
+            {index < array.length - 1 && <hr />}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>
+
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+  
+  .post {
+    list-style: none;
+    margin: 2rem auto;
+    padding: 0;
+  }
+
+  .newest {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a { 
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  a:hover{ 
+    text-decoration: underline;
+    color: var(--text-color-headline);
+  }
+
+  hr {
+    width: 33%;
+    margin: 0;
+    margin-top: 1rem;
+    border: 1px solid var(--separator);
+  }
+
+  .vertical {
+   background-color: var(--separator);
+   width: 2px;
+   height: inherit;
+  }
+ 
+</style>

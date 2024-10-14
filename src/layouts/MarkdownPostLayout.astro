@@ -10,7 +10,7 @@ const pageTitle = "Brett's Blog";
     <header class="article-header">
       <div class="article-eyebrow"></div>
       <h1 class="article-headline">{frontmatter.title}</h1>
-      <div class="article-subheadline">{frontmatter.subtitle || 'Some text'}</div>
+      <div class="article-subheadline">{frontmatter.subtitle}</div>
       <div class="article-meta">
         By <em>{frontmatter.author}</em> on {new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}
       </div>
