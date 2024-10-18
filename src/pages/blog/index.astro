@@ -45,6 +45,16 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 
 <style>
+  /* a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 5s ease;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: var(--link-color);
+  } */
+  
   .post-group {
     list-style-type: none;
     padding: 0;
@@ -57,7 +67,7 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     overflow: hidden;
     
     & li {
-      padding: 2rem;
+      padding: 1rem;
       background-color: #1a1a1a;
     }
   }
@@ -68,10 +78,6 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     list-style-type: none;
     padding: 0;
 
-    & a {
-      text-decoration: none;
-      color: var(--text-color);
-    }
 
     & li {
       padding: 1rem;

@@ -107,15 +107,15 @@ nav a:hover {
 a {
   color: var(--link-color);
   cursor: pointer;
-  
+  text-align: none;
+  text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: var(--link-color);
+  color: var(--separator);
+  text-decoration: underline;
 }
-a:visited {
-  color: var(--link-color);
-}
+
 
 
 
