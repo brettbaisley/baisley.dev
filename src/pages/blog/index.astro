@@ -9,15 +9,15 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="container">
+  <section class="container-lg">
     <Header pageTitle={pageTitle}></Header>
     <p>This is the personal blog written by <em>Brett Baisley</em>. Who is that? Well, not only is he a fantastic guy, he is a support engineer with 20+ years experience. He started blogging as he incorrectly thought the rest of the world was interested in his thoughts. Poor guy, how wrong he was...</p>
 
-    <h2>Recent Posts</h2>  
-    <ul class="post-group">
+    <h2>Featured Posts</h2>  
+    <ul class="posts featured-posts list-none group">
       {
         allPosts.slice(0, 3).map((post, index) => (
-            <li class="post">
+            <li>
               <a href={`/blog/${post.id}/`}>
                 {post.data.title}
                 
@@ -28,14 +28,14 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     </ul>
 
     <h2>Archive</h2>
-    <ul class="post-archive">
+    <ul class="posts archive-posts list-none">
       {
         allPosts.slice(3).map((post, index, array) => (
           <li>
             <a href={`/blog/${post.id}/`}>
               <div class="post-title">{post.data.title}</div>
-              <div class="post-date">{new Date(post.data.pubDate).toISOString().split('T')[0]}</div>
             </a>
+            <div class="post-date">{new Date(post.data.pubDate).toISOString().split('T')[0]}</div>
           </li>
         ))
       }
@@ -45,59 +45,32 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 
 <style>
-  /* a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: all 5s ease;
+  a {
+    color: white;
   }
-  a:hover {
-    text-decoration: underline;
-    color: var(--link-color);
-  } */
+
+  li {
+    padding: 0.5rem 1rem;
+  }
   
-  .post-group {
-    list-style-type: none;
-    padding: 0;
-    
-    border-radius: 1rem;
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: 1fr;
-    gap: 0.125rem;
-    overflow: hidden;
-    
-    & li {
-      padding: 1rem;
-      background-color: #1a1a1a;
-    }
-  }
-
-  .post-archive {
+  .posts {    
     display: grid;
     grid-template-columns: 1fr;
-    list-style-type: none;
-    padding: 0;
-
-
-    & li {
-      padding: 1rem;
-    }
-
-    & .post-date {
-      font-size: 0.75rem;
-      color: var(--text-color-light);
-    }
   }
 
+  .post-date {
+    font-size: 0.75rem;
+    color: var(--text-color-light);
+  }
 
 
 
   @media (min-width: 768px) {
-    .post-archive {
+    .archive-posts {
       grid-template-columns: repeat(2, 1fr);
     }
    
-    .post-group {
+    .featured-posts {
       grid-template-columns: repeat(3, 1fr);
     }
   }

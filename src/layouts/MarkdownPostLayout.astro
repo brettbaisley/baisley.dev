@@ -7,13 +7,11 @@ const pageTitle = "Brett's Blog";
 ---
 <BaseLayout pageTitle={pageTitle}></BaseLayout>
   <article>
-    <header class="article-header">
+    <header>
       <div class="article-eyebrow"></div>
       <h1 class="article-headline">{frontmatter.title}</h1>
-      <div class="article-subheadline">{frontmatter.subtitle}</div>
-      <div class="article-meta">
-        By <em>{frontmatter.author}</em> on {new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}
-      </div>
+      <h2 class="article-subheadline">{frontmatter.subtitle}</h2>
+      <div class="article-date">{new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</div>
     </header>
     <section class="article-content">
       <slot />
@@ -22,30 +20,19 @@ const pageTitle = "Brett's Blog";
 </BaseLayout>
 
 <style>
-  em {
-    color: var(--text-color-headline);
-    font-style: normal;
-  }
-
-  article {
-    max-width: 80ch;
-    margin: 0 auto;
-  }
-
-  .article-header > * {
-    margin-top: 1rem;
+  header {
+    text-align: center;
   }
   
-  .article-headline {
-    color: var(--text-color-headline);
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 1;
+  .article-subheadline {
+    font-weight: 200;
   }
 
-  .article-subheadline {
-    font-size: 1.375rem;
-    font-weight: 300;
-    line-height: 1.1;
-  }  
+  .article-content {
+    margin-top: 3rem;
+  }
+
+  .article-date{
+    font-size: .8rem;
+  }
 </style>
