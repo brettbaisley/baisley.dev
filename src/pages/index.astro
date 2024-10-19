@@ -3,7 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="Brett Baisley | dev">
-    <ul class="card-list">
+    <div>
+        <h1>Welcome</h1>
+        <h2>This is my personal page for exploration and innovation.</h2>
+        
+        <ul class="card-list">
         <li>
             <h2><i class="fal fa-blog"></i> <a href="/blog/">Blog</a></h2>
             <p>Just a small personal blog that doesn't really contain anything useful ... yet!</p>
@@ -36,30 +40,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
         </li>
     </ul>
+</div>
 </BaseLayout>
 
 <style>
+    div {
+        padding: 1rem;
+    }
+
+
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
   list-style-type: none;
   gap: 1rem;
   padding: 0;
-
-  @media (min-width: 1000px) {
-      flex-direction: row;
-  }
 
   & li {
     flex: 1;
     background-color: var(--bg-surface);
     border-radius: 1rem;
     padding: 1rem;
-    
-    @media (min-width: 1000px) {
-      padding: 2rem;
-    }
  }
 }
 
