@@ -3,12 +3,13 @@ const { pageTitle } = Astro.props
 ---
 <header class="global-header">
     <a href="/">Brett</a>
-    <button class="open-dialog">&#9776;</button>
+    <button class="open-dialog" aria-label="Open menu">&#9776;</button>
 </header>
 
-<dialog class="dialog-menu"> 
-    <button class="close-dialog">&times;</button>
+<dialog class="dialog-menu" role="dialog" aria-labelledby="dialog-title"> 
+    <button class="close-dialog" aria-label="Close menu">&times;</button>
     <nav class="site-navbar">
+        <h2 id="dialog-title" class="visually-hidden" aria-hidden="true">Menu</h2> <!-- Hidden title for screen readers -->
         <ul class="site-nav">
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/about/">Days</a></li>
@@ -88,6 +89,17 @@ const { pageTitle } = Astro.props
         cursor: pointer;
     }
 
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
 </style>
 
 <script>
@@ -97,16 +109,20 @@ const { pageTitle } = Astro.props
 
     if (buttonOpen) {
         buttonOpen.addEventListener('click', () => {
-            if (dialog)
+            if (dialog) {
                 dialog.showModal();
+                const navbar = dialog?.querySelector('.site-navbar');
+                if (navbar) (navbar as HTMLElement).focus(); // Move focus to the dialog
+            }
         });
     }
 
     if (buttonClose) {
         buttonClose.addEventListener('click', () => {
-            if (dialog)
+            if (dialog) {
+                if (buttonOpen) (buttonOpen as HTMLElement).focus(); // Move focus back to the button
                 dialog.close();
+            }
         });
     }
-
 </script>
