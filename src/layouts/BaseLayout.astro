@@ -2,7 +2,7 @@
 import '../styles/global.css';
 const { pageTitle } = Astro.props;
 
-import Navbar from '../components/Navbar.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 ---
 
 <html lang="en">
@@ -21,7 +21,7 @@ import Navbar from '../components/Navbar.astro';
     <script defer src="https://kit.fontawesome.com/ce0ffcb549.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <Navbar></Navbar>
+    <SiteHeader></SiteHeader>
     <main>
       <slot />
     </main>
