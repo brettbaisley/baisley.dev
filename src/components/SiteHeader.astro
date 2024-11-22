@@ -2,7 +2,10 @@
 const { pageTitle } = Astro.props
 ---
 <header class="global-header">
-    <a href="/">Brett</a>
+    <a href="/">
+        <!-- <img src="/images/black_bg_light_logo.png" alt="Logo" width="32" height="32" /> -->
+         Home
+    </a>
     <button class="open-dialog" aria-label="Open menu">&#9776;</button>
 </header>
 
@@ -26,6 +29,7 @@ const { pageTitle } = Astro.props
         align-items: center;
         padding: 1rem 2rem;
         background-color: var(--bg-surface);
+        height: 62px;
     }
 
     .dialog-menu,
@@ -54,11 +58,11 @@ const { pageTitle } = Astro.props
     .open-dialog,
     .close-dialog {
         position: absolute;
-        top: 12px;
+        top: 0;
         right: 20px;
         z-index: 1000;
-        width: 2rem;
-        height: 2rem;
+        width: 62px;
+        height: 62px;
         padding: 0;
         margin: 0;
         font-size: 2rem;
