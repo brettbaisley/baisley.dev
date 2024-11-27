@@ -1,44 +1,59 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const apps = [
+    {
+        title: "Blog",
+        url: "/blog/",
+        icon: "fal fa-blog",
+        description: "Just a small personal blog that doesn't really contain anything useful ... yet!",
+        tags: ["Astro"]
+    },
+    {
+        title: "Days Until",
+        url: "http://days.baisley.dev",
+        icon: "fal fa-calendar-day",
+        description: "An Azure static web app (SWA) built to allow my kids to see how long until a few special days.",
+        tags: ["HTML", "CSS", "Javascript"]
+    },
+    {
+        title: "Gifts",
+        url: "http://gifts.baisley.dev",
+        icon: "fal fa-gift",
+        description: "A registry/wish-list style React app, to remember some gifts my kids said they wanted.",
+        tags: ["React", "CosmosDB"]
+    },
+    {
+        title: "Top-Ten",
+        url: "/top-ten/",
+        icon: "fal fa-list-ol",
+        description: "My Late Show with David Letterman's winning top ten list entry.",
+        tags: ["HTML"]
+    }
+]
 ---
 
 <BaseLayout pageTitle="Brett Baisley | dev">
     <div class="container mx-auto px-4">
-        <h1 class="text-5xl">Welcome</h1>
-        <h2 class="text-2xl mt-4 text-gray-500">This is my personal page for exploration and innovation.</h2>
+        <h1 class="text-5xl mb-4">Welcome</h1>
+        <h2 class="text-2xl text-gray-500">This is my personal page for exploration and innovation.</h2>
         
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <li class="shadow-md p-8 rounded-2xl">
-            <h2 class="text-2xl"><i class="fal fa-blog"></i> <a href="/blog/">Blog</a></h2>
-            <p class="my-2">Just a small personal blog that doesn't really contain anything useful ... yet!</p>
-            <div>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">Astro</span>
-            </div>
-        </li>
-        <li class="shadow-md p-8 rounded-2xl">
-            <h2 class="text-2xl"><i class="fal fa-calendar-day"></i> <a href="http://days.baisley.dev">Days Until</a></h2>
-            <p class="my-2">An Azure static web app (SWA) built to allow my kids to see how long until a few special days.</p>
-            <div>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">HTML</span>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">CSS</span>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">Javascript</span>
-            </div>
-        </li>
-        <li class="shadow-md p-8 rounded-2xl">
-            <h2 class="text-2xl"><i class="fal fa-gift"></i> <a href="http://gifts.baisley.dev">Gifts</a></h2>
-            <p class="my-2">A registry/wish-list style React app, to remember some gifts my kids said they wanted.</p>
-            <div>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">React</span>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">CosmosDB</span>
-        </div>
-        </li>
-        <li class="shadow-md p-8 rounded-2xl">
-            <h2 class="text-2xl"><i class="fal fa-list-ol"></i> <a href="/top-ten/">Top-Ten</a></h2>
-            <p class="my-2">My <em>Late Show with David Letterman</em>'s winning top ten list entry.</p>
-            <div>
-                <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm">HTML</span>
-        </div>
-        </li>
-    </ul>
-</div>
+            {
+                apps.map((app) => (
+                    <li class="shadow-md p-8 rounded-2xl flex flex-col">
+                        <h2 class="text-2xl"><i class={app.icon}></i> <a href={app.url}>{app.title}</a></h2>
+                        <p class="my-2">{app.description}</p>
+                        <div>
+                            {
+                                app.tags.map((tag) => (
+                                    <span class="rounded-4xl bg-gray-200 px-2 py-1 text-sm mr-2">{tag}</span>
+                                ))
+                            }
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
 </BaseLayout>
