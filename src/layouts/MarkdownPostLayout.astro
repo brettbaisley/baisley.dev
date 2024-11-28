@@ -6,14 +6,13 @@ const pageTitle = "Brett's Blog";
 
 ---
 <BaseLayout pageTitle={pageTitle}></BaseLayout>
-  <article class="prose lg:prose-xl mx-auto p-4">
+  <article class="prose lg:prose-xl mx-auto p-4 py-12">
     <header>
-      <div class="article-eyebrow"></div>
-      <h1 class="article-headline">{frontmatter.title}</h1>
-      <h2 class="article-subheadline">{frontmatter.subtitle}</h2>
-      <div class="article-date">{new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</div>
+      <h1 class="">{frontmatter.title}</h1>
+      <h2 class="">{frontmatter.subtitle}</h2>
+      <div class="">{new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</div>
     </header>
-    <section class="article-content">
+    <section class="">
       <slot />
     </section>
   </article>

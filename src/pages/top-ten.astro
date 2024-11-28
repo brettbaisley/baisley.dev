@@ -5,42 +5,26 @@ import { Image } from "astro:assets";
 const pageTitle = "Top Ten List";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <article>
-        <p><em>The Late Show with David Letterman</em> website used to run a contest where people could submit their own "Top Ten" entries. On <time datetime="2000-10-19">October 19, 2000</time>, my entry was chosen for the #3 spot on the list, netting me bragging rights and a <em>Late Show</em> t-shirt. Enjoy!</p>
+    <article class="container mx-auto p-4 py-12">
         <header>
             <Image src="/images/late-show-logo.jpeg" alt="Late Show with David Letterman sign outside of the Ed Sullivan Theatre" width="750" height="500" />
-            <h1>Top Ten Reasons New York City is Excited About the World Series</h1>
-            <h2>With the New York Yankees and the New York Mets in the World Series, the Big Apple is abuzz with excitement. Here are the top ten reasons New York City is excited about the World Series:</h2>
+            <h1 class="text-5xl my-6">Top Ten Reasons New York City is Excited About the World Series</h1>
+            <h2 class="text-2xl text-gray-500 my-6">With the New York Yankees and the New York Mets in the World Series, the Big Apple is abuzz with excitement. Here are the top ten reasons New York City is excited about the World Series.</h2>
         </header>
-        <ol class="top-ten" reversed>
-            <li>Finally, a topic to break awkward tension with the mugger. <em>Mike A., Marion, IA</em></li>
-            <li>If player breaks his bat, can ask to borrow a fan's. <em>John A., Brooklyn, NY</em></li>
-            <li>TV viewers outside New York now free to watch CBS's exciting fall schedule. <em>Bob B., West Chester, OH</em></li>
-            <li>Easy to get tickets simply by removing them from dead subway patron's pockets. <em>Mike R., Fredericton, NB, Canada</em></li>
-            <li>West Nile Virus renamed World Series Fever. <em>Alex R., Stamford, CT</em></li>
-            <li>Many long, lingering shots of Don Zimmer on TV. <em>Steve V., Portland, OR</em></li>
-            <li>You can get mugged after all seven games instead of just three or four. <em>Brian O., Rochester</em></li>
-            <li>Hookers in Times Square don't have to leave town. <em>Brett B., Trout Brook, NB, Canada</em></li>
-            <li>All this attention is finally putting New York on the map. <em>Rob D., Cary, IL</em></li>
-            <li>It's quite touching to hear 56,000 pickpockets, muggers and murderers sing <em>Take Me Out To The Ball Game</em> on national TV. <em>Douglas Q., Grayland, WA</em></li>
+        <ol class="list-decimal space-y-2 ml-6 my-6" reversed>
+            <li class="text-gray-600">Finally, a topic to break awkward tension with the mugger. <em>Mike A., Marion, IA</em></li>
+            <li class="text-gray-600">If player breaks his bat, can ask to borrow a fan's. <em>John A., Brooklyn, NY</em></li>
+            <li class="text-gray-600">TV viewers outside New York now free to watch CBS's exciting fall schedule. <em>Bob B., West Chester, OH</em></li>
+            <li class="text-gray-600">Easy to get tickets simply by removing them from dead subway patron's pockets. <em>Mike R., Fredericton, NB, Canada</em></li>
+            <li class="text-gray-600">West Nile Virus renamed World Series Fever. <em>Alex R., Stamford, CT</em></li>
+            <li class="text-gray-600">Many long, lingering shots of Don Zimmer on TV. <em>Steve V., Portland, OR</em></li>
+            <li class="text-gray-600">You can get mugged after all seven games instead of just three or four. <em>Brian O., Rochester</em></li>
+            <li class="text-lg text-gray-800">Hookers in Times Square don't have to leave town. <em>Brett B., Trout Brook, NB, Canada</em></li>
+            <li class="text-gray-600">All this attention is finally putting New York on the map. <em>Rob D., Cary, IL</em></li>
+            <li class="text-gray-600">It's quite touching to hear 56,000 pickpockets, muggers and murderers sing <em>Take Me Out To The Ball Game</em> on national TV. <em>Douglas Q., Grayland, WA</em></li>
         </ol>
+
+        <p class="mt-8"><em>The Late Show with David Letterman</em> website used to run a contest where people could submit their own "Top Ten" entries. On <time datetime="2000-10-19">October 19, 2000</time>, my entry was chosen for the #3 spot on this list, netting me bragging rights and a <em>Late Show</em> t-shirt.</p>
     </article>
 
 </BaseLayout>
-
-
-
-<style>
-    .top-ten {
-        font-weight: 300;
-        font-size: 1.125rem;
-    }
-    .top-ten li {
-        margin-bottom: 1rem;
-    }
-
-    li:nth-child(8) {
-        font-weight: 500;
-        color: #ffffff;
-    }
-</style>
