@@ -5,7 +5,7 @@ const { pageTitle } = Astro.props;
 import SiteHeader from '../components/SiteHeader.astro';
 ---
 
-<html lang="en">
+<html lang="en-US" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <link rel="canonical" href="https://baisley.dev" />
@@ -16,6 +16,7 @@ import SiteHeader from '../components/SiteHeader.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#0f1419">
+    <meta charset="utf-8"> 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
     <script defer src="https://kit.fontawesome.com/ce0ffcb549.js" crossorigin="anonymous"></script>
