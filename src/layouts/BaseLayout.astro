@@ -2,7 +2,7 @@
 import '../styles/global.css';
 const { pageTitle } = Astro.props;
 
-import SiteHeader from '../components/SiteHeader.astro';
+import Header from '../components/Header.astro';
 ---
 
 <html lang="en-US" dir="ltr">
@@ -21,8 +21,8 @@ import SiteHeader from '../components/SiteHeader.astro';
     <title>{pageTitle}</title>
     <script defer src="https://kit.fontawesome.com/ce0ffcb549.js" crossorigin="anonymous"></script>
   </head>
-  <body class="bg-white dark:bg-gray-900">
-    <SiteHeader></SiteHeader>
+  <body class="bg-white dark:bg-gray-950">
+    <Header></Header>
     <main>
       <slot />
     </main>
