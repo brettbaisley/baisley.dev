@@ -1,11 +1,11 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import MainLayout from './MainLayout.astro';
 const { frontmatter } = Astro.props;
 
 const pageTitle = "Brett's Blog";
 
 ---
-<BaseLayout pageTitle={pageTitle}></BaseLayout>
+<MainLayout pageTitle={pageTitle}>
   <article class="prose lg:prose-xl dark:prose-invert mx-auto p-4 py-12 dark:bg-gray-900 dark:text-slate-500">
     <header>
       <h1 class="">{frontmatter.title}</h1>
@@ -16,5 +16,5 @@ const pageTitle = "Brett's Blog";
       <slot />
     </section>
   </article>
-</BaseLayout>
+</MainLayout>
 

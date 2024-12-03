@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 
 const pageTitle = "Brett's Blog";
 const allPosts = await getCollection("blog");
 allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<MainLayout pageTitle={pageTitle}>
   <section class="container mx-auto p-4 py-12">
     <h2 class="text-5xl mb-4 tracking-tight font-extrabold text-black dark:text-slate-200">{pageTitle}</h2>
     <p class="text-slate-600">This is the personal blog written by <em>Brett Baisley</em>. Who is that? Well, not only is he a fantastic guy, he is a support engineer with 20+ years experience. He started blogging as he incorrectly thought the rest of the world was interested in his thoughts. Poor guy, how wrong he was...</p>
@@ -34,4 +34,4 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
       }
     </ul>
   </section>
-</BaseLayout>
+</MainLayout>

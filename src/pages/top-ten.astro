@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
 const pageTitle = "Top Ten List";
 ---
-<BaseLayout pageTitle={pageTitle}>
+<MainLayout pageTitle={pageTitle}>
     <article class="container mx-auto p-4 py-12">
         <header>
             <Image src="/images/late-show-logo.jpeg" alt="Late Show with David Letterman sign outside of the Ed Sullivan Theatre" width="750" height="500" />
@@ -27,4 +27,4 @@ const pageTitle = "Top Ten List";
         <p class="mt-12"><em>The Late Show with David Letterman</em> website used to run a contest where people could submit their own "Top Ten" entries. On <time datetime="2000-10-19">October 19, 2000</time>, my entry was chosen for the #3 spot on this list, netting me bragging rights and a <em>Late Show with David Letterman</em> t-shirt.</p>
     </article>
 
-</BaseLayout>
+</MainLayout>
