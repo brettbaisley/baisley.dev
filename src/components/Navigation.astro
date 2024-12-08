@@ -1,0 +1,61 @@
+---
+const links = [
+    { href: "/", text: "Home" },
+    { href: "/about", text: "About" },
+    { href: "/blog", text: "Blog" },
+    { href: "/top-ten", text: "Top Ten" },
+];
+---
+
+<!-- Mobile Menu -->
+ <nav>
+    <button class="open-menu dark:text-white cursor-pointer p-4 font-bold text-2xl md:hidden">
+        <i class="fal fa-bars"></i>
+    </button>
+ </nav>
+ <div class="mobile-nav hidden flex flex-col  z-20 top-0 left-0 right-0 overflow-y-auto fixed h-dvh max-h-dvh px-4 bg-gray-100 dark:bg-gray-950 rounded-lg shadow-lg text-gray-700 dark:text-gray-300">
+    <button class="close-menu text-right dark:text-white cursor-pointer p-4 font-bold text-2xl hover:text-gray-600"><i class="fal fa-x"></i></button>
+    <ul class="space-y-6">
+        {
+            links.map((link) => (
+                <li class="border-t-1 m-0"><a class="block p-8 text-xl hover:text-gray-600" href={link.href}>{link.text}</a></li>
+            ))
+        }
+    </ul>
+    <div class="mt-auto text-center text-sm p-4">
+        All Rights Reserved
+    </div>
+</div>
+
+
+<!-- Desktop Menu -->
+<ul class="hidden md:flex text-gray-700 dark:text-gray-300 py-4">
+    {
+        links.map((link) => (
+            <li><a class="px-4 hover:text-gray-800" href={link.href}>{link.text}</a></li>
+        ))
+    }
+</ul>
+
+
+<script>
+    // WHen document dom loaded, get the hamburger button and the mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+        const htmlTag = document.querySelector('html');
+        const openMenu = document.querySelector('.open-menu');
+        const closeMenu = document.querySelector('.close-menu');
+        const mobileMenu = document.querySelector('.mobile-nav');
+
+        // When the hamburger button is clicked, toggle the hidden class on the mobile menu
+        openMenu?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+            htmlTag?.classList.toggle('overflow-hidden');
+        });
+
+        // When the close button is clicked, toggle the hidden class on the mobile menu
+        closeMenu?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+            htmlTag?.classList.toggle('overflow-hidden');
+        });
+    });
+</script>

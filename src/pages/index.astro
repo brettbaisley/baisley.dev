@@ -1,70 +1,59 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const apps = [
+    {
+        title: "Blog",
+        url: "/blog/",
+        icon: "fal fa-blog",
+        description: "Just a small personal blog that doesn't really contain anything useful ... yet!",
+        tags: ["Astro"]
+    },
+    {
+        title: "Days Until",
+        url: "http://days.baisley.dev",
+        icon: "fal fa-calendar-day",
+        description: "An Azure static web app (SWA) built to allow my kids to see how long until a few special days.",
+        tags: ["HTML", "CSS", "Javascript"]
+    },
+    {
+        title: "Gifts",
+        url: "http://gifts.baisley.dev",
+        icon: "fal fa-gift",
+        description: "A registry/wish-list style React app, to remember some gifts my kids said they wanted.",
+        tags: ["React", "CosmosDB"]
+    },
+    {
+        title: "Top-Ten",
+        url: "/top-ten/",
+        icon: "fal fa-list-ol",
+        description: "My Late Show with David Letterman's winning top ten list entry.",
+        tags: ["HTML"]
+    }
+]
 ---
 
-<BaseLayout pageTitle="Brett Baisley | dev">
-    <div class="container">
-        <h1>Welcome</h1>
-        <h2>This is my personal page for exploration and innovation.</h2>
+<MainLayout title="Brett Baisley | dev">
+    <div class="container mx-auto p-4 py-12">
+        <h1 class="text-5xl mb-4 tracking-tight font-extrabold text-black dark:text-white">Welcome</h1>
+        <h2 class="text-xl text-gray-600 dark:text-gray-300">This is my personal page for exploration and innovation.</h2>
         
-        <ul class="card-list">
-        <li>
-            <h2><i class="fal fa-blog"></i> <a href="/blog/">Blog</a></h2>
-            <p>Just a small personal blog that doesn't really contain anything useful ... yet!</p>
-            <div class="pills">
-                <span class="pill">Astro</span>
-            </div>
-        </li>
-        <li>
-            <h2><i class="fal fa-calendar-day"></i> <a href="http://days.baisley.dev">Days</a></h2>
-            <p>An Azure static web app (SWA) built to allow my kids to see how long until a few special days.</p>
-            <div class="pills">
-                <span class="pill">HTML</span>
-                <span class="pill">CSS</span>
-                <span class="pill">Javascript</span>
-            </div>
-        </li>
-        <li>
-            <h2><i class="fal fa-gift"></i> <a href="http://gifts.baisley.dev">Gifts</a></h2>
-            <p>A registry/wish-list style React app, to remember some gifts my kids said they wanted.</p>
-            <div class="pills">
-                <span class="pill">React</span>
-                <span class="pill">CosmosDB</span>
-        </div>
-        </li>
-        <li>
-            <h2><i class="fal fa-list-ol"></i> <a href="/top-ten/">Top-Ten</a></h2>
-            <p>My <em>Late Show with David Letterman</em>'s winning top ten list entry.</p>
-            <div class="pills">
-                <span class="pill">HTML</span>
-        </div>
-        </li>
-    </ul>
-</div>
-</BaseLayout>
-
-<style>
-.card-list {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  list-style-type: none;
-  gap: 1rem;
-  padding: 0;
-
-  & li {
-    flex: 1;
-    background-color: var(--bg-surface);
-    border-radius: 1rem;
-    padding: 1rem;
- }
-}
-
-.pill {
-  background-color: var(--bg-surface);
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-</style>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+            {
+                apps.map((app) => (
+                    <li class="flex flex-col gap-2 shadow-md rounded-2xl p-4">
+                        <h2 class="text-2xl text-gray-800 dark:text-gray-200"><i class={app.icon}></i> <a href={app.url}>{app.title}</a></h2>
+                        <p class="my-2 text-gray-500 dark:text-gray-500">{app.description}</p>
+                        <div>
+                            {
+                                app.tags.map((tag) => (
+                                    <span class="rounded-2xl bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 px-2 py-1 text-sm mr-2">{tag}</span>
+                                ))
+                            }
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</MainLayout>

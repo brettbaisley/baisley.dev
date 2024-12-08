@@ -1,38 +1,20 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import MainLayout from './MainLayout.astro';
 const { frontmatter } = Astro.props;
 
 const pageTitle = "Brett's Blog";
 
 ---
-<BaseLayout pageTitle={pageTitle}></BaseLayout>
-  <article>
+<MainLayout pageTitle={pageTitle}>
+  <article class="prose lg:prose-xl dark:prose-invert mx-auto p-4 py-12 dark:bg-gray-900 dark:text-slate-500">
     <header>
-      <div class="article-eyebrow"></div>
-      <h1 class="article-headline">{frontmatter.title}</h1>
-      <h2 class="article-subheadline">{frontmatter.subtitle}</h2>
-      <div class="article-date">{new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</div>
+      <h1 class="">{frontmatter.title}</h1>
+      <h2 class="">{frontmatter.subtitle}</h2>
+      <div class="">{new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</div>
     </header>
-    <section class="article-content">
+    <section class="">
       <slot />
     </section>
   </article>
-</BaseLayout>
+</MainLayout>
 
-<style>
-  header {
-    text-align: center;
-  }
-  
-  .article-subheadline {
-    font-weight: 200;
-  }
-
-  .article-content {
-    margin-top: 3rem;
-  }
-
-  .article-date{
-    font-size: .8rem;
-  }
-</style>

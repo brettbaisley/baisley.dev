@@ -1,132 +1,19 @@
 ---
-const { pageTitle } = Astro.props
+import Logo from "./Logo.astro"
+import Navigation from "./Navigation.astro"
+
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/blog", text: "Blog" },
+];
 ---
-<header class="global-header">
-    <a href="/">
-        <!-- <img src="/images/black_bg_light_logo.png" alt="Logo" width="32" height="32" /> -->
-         Home
-    </a>
-    <button class="open-dialog" aria-label="Open menu">&#9776;</button>
+<header class="flex items-center justify-between px-4 gap-4">
+  <Logo />
+  <Navigation />
 </header>
 
-<dialog class="dialog-menu" role="dialog" aria-labelledby="dialog-title"> 
-    <button class="close-dialog" aria-label="Close menu">&times;</button>
-    <nav class="site-navbar">
-        <h2 id="dialog-title" class="visually-hidden" aria-hidden="true">Menu</h2> <!-- Hidden title for screen readers -->
-        <ul class="site-nav">
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/about/">Days</a></li>
-            <li><a href="/about/">Gifts</a></li>
-            <li><a href="/about/">Top-Ten</a></li>
-        </ul>
-    </nav>
-</dialog>
-
-<style>
-    .global-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: var(--bg-surface);
-        height: 62px;
-    }
-
-    .dialog-menu,
-    .dialog-menu[open] {
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px); 
-        position: fixed;
-        width: 400px;
-        max-width: 70%;
-        min-height: 100vh;
-        margin: 0;
-        margin-left: auto;
-        transform: translateX(100%);
-        transition: .3s;
-    }
-
-    .dialog-menu[open] {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        margin-left: auto;
-        transform: translateX(0);
-        transition: .3s;
-    }
-
-    .open-dialog,
-    .close-dialog {
-        position: absolute;
-        top: 0;
-        right: 20px;
-        z-index: 1000;
-        width: 62px;
-        height: 62px;
-        padding: 0;
-        margin: 0;
-        font-size: 2rem;
-        line-height: 2rem;
-        border-radius: 5px;
-        background-color: transparent;
-        color: gray;
-        text-align: center; 
-    }
-
-    .site-nav {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        list-style: none;
-        padding: 4rem 1rem;
-        margin: 0;
-    }
-    .site-nav li {
-        padding: 0;
-        margin: 0;
-    }
-
-    .site-nav a {
-        font-size: 1.125rem;
-        display: block;
-        width: 100%;
-        cursor: pointer;
-    }
-
-    .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        padding: 0;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-    }
-
-</style>
 
 <script>
-    const dialog = document.querySelector('dialog');
-    const buttonOpen = document.querySelector('.open-dialog');
-    const buttonClose = document.querySelector('.close-dialog');
 
-    if (buttonOpen) {
-        buttonOpen.addEventListener('click', () => {
-            if (dialog) {
-                dialog.showModal();
-                const navbar = dialog?.querySelector('.site-navbar');
-                if (navbar) (navbar as HTMLElement).focus(); // Move focus to the dialog
-            }
-        });
-    }
-
-    if (buttonClose) {
-        buttonClose.addEventListener('click', () => {
-            if (dialog) {
-                if (buttonOpen) (buttonOpen as HTMLElement).focus(); // Move focus back to the button
-                dialog.close();
-            }
-        });
-    }
 </script>

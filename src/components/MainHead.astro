@@ -1,12 +1,8 @@
 ---
-import '../styles/global.css';
-const { pageTitle } = Astro.props;
-
-import SiteHeader from '../components/SiteHeader.astro';
+const { title } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="canonical" href="https://baisley.dev" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,14 +12,8 @@ import SiteHeader from '../components/SiteHeader.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#0f1419">
+    <meta charset="utf-8"> 
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>{pageTitle}</title>
+    <title>{title}</title>
     <script defer src="https://kit.fontawesome.com/ce0ffcb549.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <SiteHeader></SiteHeader>
-    <main>
-      <slot />
-    </main>
-  </body>
-</html>
+</head>
