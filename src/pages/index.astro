@@ -41,7 +41,7 @@ const apps = [
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {
                 apps.map((app) => (
-                    <li class="flex flex-col gap-2 shadow-md rounded-2xl">
+                    <li class="flex flex-col gap-2 shadow-md rounded-2xl p-4">
                         <h2 class="text-2xl text-gray-800 dark:text-gray-200"><i class={app.icon}></i> <a href={app.url}>{app.title}</a></h2>
                         <p class="my-2 text-gray-500 dark:text-gray-500">{app.description}</p>
                         <div>
