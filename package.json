@@ -10,15 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.2.1",
-    "astro": "^5.0.0-beta.10"
+    "@astrojs/sitemap": "^0.0.2",
+    "astro": "^5.0.4"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0-beta.6",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.0.0-beta.2",
-    "tailwindcss": "^4.0.0-beta.2"
+    "tailwindcss": "^4.0.0-beta.6"
   }
 }
