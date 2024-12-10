@@ -1,13 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
+import LSLogo from "../assets/images/late-show-logo.jpeg";
 
 const pageTitle = "Top Ten List";
 ---
 <MainLayout pageTitle={pageTitle}>
-    <article class="container mx-auto p-4 py-12">
+    <article class="container max-w-5xl mx-auto p-4 py-12">
         <header>
-            <Image src="/images/late-show-logo.jpeg" alt="Late Show with David Letterman sign outside of the Ed Sullivan Theatre" width="750" height="500" />
+            <Image src={LSLogo} alt="Late Show with David Letterman sign outside of the Ed Sullivan Theatre" width="750" height="500" />
             <h1 class="text-5xl my-6 tracking-tight dark:text-gray-300">Top Ten Reasons New York City is Excited About the World Series</h1>
             <h2 class="text-2xl my-6 tracking-tight text-slate-600 dark:text-gray-400">With the New York Yankees and the New York Mets in the World Series, the Big Apple is abuzz with excitement. Here are the top ten reasons New York City is excited about the World Series.</h2>
         </header>
@@ -24,7 +25,7 @@ const pageTitle = "Top Ten List";
             <li class="text-gray-500">It's quite touching to hear 56,000 pickpockets, muggers and murderers sing <em>Take Me Out To The Ball Game</em> on national TV. <em>Douglas Q., Grayland, WA</em></li>
         </ol>
 
-        <p class="mt-12"><em>The Late Show with David Letterman</em> website used to run a contest where people could submit their own "Top Ten" entries. On <time datetime="2000-10-19">October 19, 2000</time>, my entry was chosen for the #3 spot on this list, netting me bragging rights and a <em>Late Show with David Letterman</em> t-shirt.</p>
+        <p class="mt-12 text-gray-500"><em>The Late Show with David Letterman</em> website used to run a contest where people could submit their own "Top Ten" entries. On <time datetime="2000-10-19">October 19, 2000</time>, my entry was chosen for the #3 spot on this list, netting me bragging rights and a <em>Late Show with David Letterman</em> t-shirt.</p>
     </article>
 
 </MainLayout>
