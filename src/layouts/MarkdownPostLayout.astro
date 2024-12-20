@@ -1,6 +1,8 @@
 ---
 import MainLayout from './MainLayout.astro';
+import { getEntry } from "astro:content";
 const { frontmatter } = Astro.props;
+const authorData = await getEntry("authors", frontmatter.author.id);
 
 const pageTitle = "Brett's Blog";
 
@@ -10,11 +12,18 @@ const pageTitle = "Brett's Blog";
     <header>
       <h1 class="">{frontmatter.title}</h1>
       <h2 class="">{frontmatter.subtitle}</h2>
-      <div class="">{new Date(frontmatter.pubDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</div>
+      <time datetime={frontmatter.pubDate.toISOString()}>{frontmatter.pubDate.toLocaleDateString(undefined, {
+        dateStyle: "medium",
+        timeZone: "UTC"
+        })}</time>
     </header>
     <section class="">
       <slot />
     </section>
+
+    <div>
+      This article was written by {authorData?.data.name}. {authorData?.data.bio}
+    </div>
   </article>
 </MainLayout>
 

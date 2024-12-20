@@ -1,9 +1,9 @@
 ---
-title: 'Happy New Year!'
+title: Happy New Year!
 subtitle: ''
 pubDate: 2023-12-30
-description: 'A heartfelt Happy New Year message.'
-author: 'Brett Baisley'
+description: A heartfelt Happy New Year message.
+author: brett-baisley
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'

@@ -16,7 +16,7 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     <h2 class="text-3xl mt-8 text-gray-700 dark:text-gray-300">Blog Articles</h2>
     <ul class="grid grid-cols-1 lg:max-w-none md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
       {
-        allPosts.map((post, index, array) => {
+        allPosts.map((post) => {
           const pubDate = new Date(post.data.pubDate);
 
           return(
