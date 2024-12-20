@@ -18,6 +18,4 @@ const blog = defineCollection({
     })
 });
 // Export a single `collections` object to register your collection(s)
-export const collections = {
-  blog: blog,
-};
+export const collections = { blog };
