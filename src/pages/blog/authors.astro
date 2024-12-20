@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+const authors = await getCollection("authors");
+---
+
+<h1>Authors</h1>
+
+{
+    authors.map((author) => {
+        return (
+            <div>
+                <h2>{author.data.name}</h2>
+                <p>{author.data.bio}</p>
+            </div>
+        );
+    })
+}

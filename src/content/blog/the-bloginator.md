@@ -3,7 +3,7 @@ title: 'The Bloginator'
 subtitle: ''
 pubDate: 2022-11-07
 description: 'The first ever posting of my new blog!'
-author: 'Brett Baisley'
+author: 'brett-baisley'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'

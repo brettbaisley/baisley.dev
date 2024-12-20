@@ -3,7 +3,7 @@ title: 'Merry Christmas!'
 subtitle: ''
 pubDate: 2023-12-25
 description: 'A simple Merry Christmas message.'
-author: 'Brett Baisley'
+author: 'brett-baisley'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
