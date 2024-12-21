@@ -10,9 +10,9 @@ import Footer from '../components/Footer.astro';
 <html lang="en-US" dir="ltr">
   <MainHead title={title}></MainHead>
 
-  <body class="bg-white dark:bg-gray-950">
+  <body class="bg-white dark:bg-gray-950 ">
     <SiteHeader />
-    <main>
+    <main class="container mx-auto p-4 py-12">
       <slot />
     </main>
     <Footer />

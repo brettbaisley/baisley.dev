@@ -2,11 +2,9 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import LSLogo from "../assets/images/late-show-logo.jpeg";
-
-const pageTitle = "Top Ten List";
 ---
-<MainLayout pageTitle={pageTitle}>
-    <article class="container max-w-5xl mx-auto p-4 py-12">
+<MainLayout title="Brett Baisley | Top Ten List">
+    <article class="max-w-5xl mx-auto">
         <header>
             <Image src={LSLogo} alt="Late Show with David Letterman sign outside of the Ed Sullivan Theatre" width="750" height="500" />
             <h1 class="text-5xl my-6 tracking-tight dark:text-gray-300">Top Ten Reasons New York City is Excited About the World Series</h1>
