@@ -1,13 +1,13 @@
 ---
-import MainLayout from './MainLayout.astro';
 import { getEntry } from "astro:content";
 const { frontmatter } = Astro.props;
+
+console.log(frontmatter)
 const authorData = await getEntry("authors", frontmatter.author.id);
 
 const pageTitle = "Brett's Blog";
 
 ---
-<MainLayout pageTitle={pageTitle}>
   <article class="prose lg:prose-xl dark:prose-invert mx-auto border text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-900">
     <header>
       <h1 class="">{frontmatter.title}</h1>
@@ -25,5 +25,3 @@ const pageTitle = "Brett's Blog";
       This article was written by {authorData?.data.name}. {authorData?.data.bio}
     </div>
   </article>
-</MainLayout>
-
