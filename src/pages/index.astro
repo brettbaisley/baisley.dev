@@ -37,10 +37,10 @@ const apps = [
     <h1 class="text-5xl mb-4 tracking-tight font-extrabold text-black dark:text-white">Welcome</h1>
     <h2 class="text-xl text-gray-600 dark:text-gray-300">This is my personal page for exploration and innovation.</h2>
     
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 ">
         {
             apps.map((app) => (
-                <li class="flex flex-col gap-2 shadow-md rounded-2xl p-4">
+                <li class="flex flex-col gap-2 shadow-md border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-900">
                     <h2 class="text-2xl text-gray-800 dark:text-gray-200"><i class={app.icon}></i> <a href={app.url}>{app.title}</a></h2>
                     <p class="my-2 text-gray-500 dark:text-gray-500">{app.description}</p>
                     <div>

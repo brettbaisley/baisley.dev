@@ -8,11 +8,11 @@ const pageTitle = "Brett's Blog";
 
 ---
 <MainLayout pageTitle={pageTitle}>
-  <article class="prose lg:prose-xl dark:prose-invert mx-auto p-4 py-12 dark:bg-gray-900 dark:text-slate-500">
+  <article class="prose lg:prose-xl dark:prose-invert mx-auto border text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-900">
     <header>
       <h1 class="">{frontmatter.title}</h1>
       <h2 class="">{frontmatter.subtitle}</h2>
-      <time datetime={frontmatter.pubDate.toISOString()}>{frontmatter.pubDate.toLocaleDateString(undefined, {
+      <time class="text-sm text-gray-700 dark:text-gray-300" datetime={frontmatter.pubDate.toISOString()}>{frontmatter.pubDate.toLocaleDateString(undefined, {
         dateStyle: "medium",
         timeZone: "UTC"
         })}</time>
