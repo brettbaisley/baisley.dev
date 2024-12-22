@@ -1,17 +1,21 @@
 ---
+import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 const authors = await getCollection("authors");
 ---
-
-<h1>Authors</h1>
-
+<MainLayout 
+  title="Brett Baisley | Blog | Authors"
+  heading="Authors"
+  subheading="Bio pages of all authors of Brett's Blog."
+>
 {
     authors.map((author) => {
         return (
-            <div>
-                <h2>{author.data.name}</h2>
-                <p>{author.data.bio}</p>
+            <div class="mt-8">
+                <p class="text-gray-800 dark:text-gray-200">{author.data.name}</p>
+                <p class="text-gray-500">{author.data.bio}</p>
             </div>
         );
     })
 }
+</MainLayout>

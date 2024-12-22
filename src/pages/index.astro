@@ -33,10 +33,11 @@ const apps = [
 ]
 ---
 
-<MainLayout title="Brett Baisley | Home">
-    <h1 class="text-5xl mb-4 tracking-tight font-extrabold text-black dark:text-white">Welcome</h1>
-    <h2 class="text-xl text-gray-600 dark:text-gray-300">This is my personal page for exploration and innovation.</h2>
-    
+<MainLayout 
+    title="Brett Baisley | Home"
+    heading="Welcome"  
+    subheading="This is my personal page for exploration and innovation."
+>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 ">
         {
             apps.map((app) => (

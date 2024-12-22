@@ -5,9 +5,11 @@ const brett = await getEntry("authors", "brett-baisley");
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Brett Baisley | About Me">
-    <h1 class="text-5xl mb-4 tracking-tight font-extrabold text-black dark:text-white">About Me</h1>
-    <h2 class="text-xl text-gray-600 dark:text-gray-300">This is my personal page for exploration and innovation.</h2>
+<MainLayout  
+    title="Brett Baisley | About Me"
+    heading="About Me"
+    subheading="This is my personal page for exploration and innovation."
+>
     <p class="my-2 text-gray-500 dark:text-gray-500">{brett?.data.name}</p>
     <p class="my-2 text-gray-500 dark:text-gray-500">{brett?.data.bio}</p>
 </MainLayout>
