@@ -1,0 +1,125 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const occasion_list = [
+        ["Mateo's Birthday", "12-15"],
+        ["Lucas's Birthday", "01-18"],
+        ["Mom's Birthday", "06-15"],
+        ["Dad's Birthday", "04-21"],
+        ["Christmas", "12-25"],
+        ["Halloween", "10-31"],
+    ];
+
+---
+
+<MainLayout  
+    title="Brett Baisley | Days Until"
+    heading="Days Until"
+    subheading="This is a page for my kids to show how long until a few special days."
+>
+    <div class="flex flex-col items-center justify-evenly h-full">
+        <div class="occasions flex gap-4 overflow-x-scroll">
+            {
+                occasion_list.map((occasion) => (
+                    <button class="occasion py-2 px-4 rounded text-white dark:text-black bg-purple-600 dark:bg-purple-400" value={occasion[1]}>{occasion[0]}</button>
+                ))
+            }
+        </div>
+
+
+        <div class="my-40">
+            <p id="days" class="text-9xl text-black dark:text-white text-center">22</p>
+            <p id="slug" class="text-xl text-gray-800 dark:text-gray-200 text-center">fake days</p>
+        </div>
+
+        <footer class="text-gray-500 dark:text-gray-500">
+            Made with ❤️ for my two boys.
+        </footer>
+    </div>
+
+</MainLayout>
+
+
+<script>
+    const occasions = document.querySelectorAll(".occasion");
+    const days = document.getElementById("days");
+    const slug = document.getElementById("slug");
+
+    const calculateDaysUntil = (selectedDate) => {
+        const today = new Date();
+        const [month, day] = selectedDate.split("-");
+
+        let occasionDate = new Date(today.getFullYear(), month - 1, day);
+        console.log(`Occasion Date: ${occasionDate}`);
+
+        var daysAway = Math.ceil((occasionDate - today) / (1000 * 60 * 60 * 24));
+
+        if (daysAway < 0) {
+            occasionDate = new Date(today.getFullYear() + 1, month - 1, day);
+            daysAway = Math.ceil((occasionDate - today) / (1000 * 60 * 60 * 24));
+        }
+        console.log(`Days Away: ${daysAway} `);
+        return daysAway
+    }
+   
+    // Function to handle click events
+    const handleClick = (event: Event) => {
+        console.log(`Clicked: ${event.target.value}`);
+        console.log(calculateDaysUntil(event.target.value));
+        const daysUntil = calculateDaysUntil(event.target.value);
+        days.innerText = daysUntil;
+        slug.innerHTML = daysUntil === 1 ? `day until <em>${event.target.textContent}</em>` : `days until  <em>${event.target.textContent}</em>`;
+    };
+ 
+    occasions.forEach((occasion) => {
+        occasion.addEventListener('click', handleClick);
+    });
+
+    // const calculate_easter = (year) => {
+    //     let a = year % 19;
+    //     let b = Math.floor(year / 100);
+    //     let c = year % 100;
+    //     let d = Math.floor(b / 4);
+    //     let e = b % 4;
+    //     let f = Math.floor((b + 8) / 25);
+    //     let g = Math.floor((b - f + 1) / 3);
+    //     let h = (19 * a + b - d - g + 15) % 30;
+    //     let i = Math.floor(c / 4);
+    //     let k = c % 4;
+    //     let l = (32 + 2 * e + 2 * i - h - k) % 7;
+    //     let m = Math.floor((a + 11 * h + 22 * l) / 451);
+    //     let month = Math.floor((h + l - 7 * m + 114) / 31);
+    //     let day = ((h + l - 7 * m + 114) % 31) + 1;
+    //     return new Date(year, month -1, day);
+    // }
+
+
+
+    // const addButton = (occasionText, occasionDate) => {
+    //     const str_year = occasionDate.getFullYear();
+    //     const str_month = (occasionDate.getMonth() + 1).toString().padStart(2, '0');
+    //     const str_day = occasionDate.getDate().toString().padStart(2, '0');
+        
+    //     const button = document.createElement("button");
+    //     button.value = `${str_year}-${str_month}-${str_day}`;
+    //     button.textContent = occasionText;
+    //     button.addEventListener('click', handleClick);
+    //     occasions.appendChild(button);
+
+    // }
+
+    // Add Easter button
+    // let easterDate = calculate_easter(today.getFullYear());
+    // if (easterDate < today) {
+    //     easterDate = calculate_easter(today.getFullYear() + 1);
+    // }
+
+
+
+
+
+
+
+
+    
+</script>
