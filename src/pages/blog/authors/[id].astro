@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const authors = await getCollection('authors');
+  return authors.map(author => ({
+    params: { id: author.id }, 
+    props: { author },
+  }));
+}
+
+const { author } = Astro.props;
+const { Content } = await render(author);
+---
+<MainLayout 
+    title={`Brett Baisley | Blog | ${author.data.display_name}`}
+    heading={author.data.display_name}
+    subheading={author.data.role}
+>
+    <div>
+        <p class="mt-8 text-gray-500 dark:text-gray-500">{author.data.bio}</p>
+    </div>
+    <Content />
+</MainLayout>

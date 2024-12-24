@@ -1,5 +1,7 @@
 {
-    "name": "Brett Baisley",
+    "first_name": "Brett",
+    "last_name": "Baisley",
+    "display_name": "Brett Baisley",
     "role": "Software Production Management & Reliability Engineering Manager",
     "bio": "Brett Baisley is a New York City based software production Management and reliability engineering manager. He has a passion for building and scaling high-performing teams and systems.",
     "social": {
