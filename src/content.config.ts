@@ -22,6 +22,7 @@ const authors = defineCollection({
   loader: glob({pattern: '**/*.json', base: "./src/content/authors" }),
   schema: z.object({
     name: z.string(),
+    role: z.string().optional(),
     bio: z.string()
     })
  });
