@@ -1,13 +1,17 @@
 ---
 import '../styles/global.css';
-const { title, heading, subheading } = Astro.props;
 
 import MainHead from '../components/MainHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import Footer from '../components/Footer.astro';
+
+const { title, heading, subheading } = Astro.props;
+
+import { siteLang, siteDirection } from "../data/config";
 ---
 
-<html lang="en-US" dir="ltr">
+<!doctype html>
+<html lang={siteLang} dir={siteDirection}>
   <MainHead title={title}></MainHead>
 
   <body class="bg-white dark:bg-gray-950 ">

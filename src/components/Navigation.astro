@@ -1,11 +1,5 @@
 ---
-const links = [
-    { href: "/", text: "Home" },
-    { href: "/about", text: "About" },
-    { href: "/days", text: "Days" },
-    { href: "/blog", text: "Blog" },
-    { href: "/top-ten", text: "Top Ten" },
-];
+import { mainMenu } from "../data/menus.js";
 ---
 
 <!-- Mobile Menu -->
@@ -18,8 +12,8 @@ const links = [
     <button class="close-menu text-right dark:text-white cursor-pointer p-4 font-bold text-2xl hover:text-gray-600"><i class="fal fa-x"></i></button>
     <ul class="space-y-6">
         {
-            links.map((link) => (
-                <li class="border-t-1 m-0"><a class="block p-8 text-xl hover:text-gray-600" href={link.href}>{link.text}</a></li>
+            mainMenu.map((link) => (
+                <li class="border-t-1 m-0"><a class="block p-8 text-xl hover:text-gray-600" href={link.url}>{link.name}</a></li>
             ))
         }
     </ul>
@@ -32,8 +26,8 @@ const links = [
 <!-- Desktop Menu -->
 <ul class="hidden md:flex text-gray-700 dark:text-gray-300 py-4">
     {
-        links.map((link) => (
-            <li><a class="px-4 hover:text-gray-800" href={link.href}>{link.text}</a></li>
+        mainMenu.map((link) => (
+            <li><a class="px-4 hover:text-gray-800" href={link.url}>{link.name}</a></li>
         ))
     }
 </ul>
