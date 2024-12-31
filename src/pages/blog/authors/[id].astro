@@ -16,7 +16,7 @@ const { Content } = await render(author);
 <MainLayout 
     title={`Brett Baisley | Blog | ${author.data.first_name} ${author.data.last_name}`}
     heading=`${author.data.first_name} ${author.data.last_name}`
-    subheading={author.data.role}
+    subheading=`${author.data.role}`
 >
     <div>
         <p class="mt-8 text-gray-500 dark:text-gray-500">{author.data.bio}</p>

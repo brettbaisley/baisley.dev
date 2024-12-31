@@ -1,5 +1,29 @@
 ---
-import { mainMenu } from "../data/menus.js";
+const menuitems = [
+    { 
+        name: "Home",
+        url: "/"
+    },
+    { 
+        name: "About", 
+        url: "/about", 
+    },
+    { 
+        name: "Days", 
+        url: "/days", 
+    },
+    { 
+        name: "Blog",
+        url: "/blog"
+    },
+    { 
+        name: "Top Ten", 
+        url: "/top-ten", 
+    },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
+console.log(pathname);
 ---
 
 <!-- Mobile Menu -->
@@ -12,8 +36,10 @@ import { mainMenu } from "../data/menus.js";
     <button class="close-menu text-right dark:text-white cursor-pointer p-4 font-bold text-2xl hover:text-gray-600"><i class="fal fa-x"></i></button>
     <ul class="space-y-6">
         {
-            mainMenu.map((link) => (
-                <li class="border-t-1 m-0"><a class="block p-8 text-xl hover:text-gray-600" href={link.url}>{link.name}</a></li>
+            menuitems.map((link) => (
+                <li class="border-t-1 m-0">
+                    <a class={`block p-8 text-xl hover:text-gray-600 ${pathname === link.url ? 'active' : ''}`} href={link.url}>{link.name}</a>
+                </li>
             ))
         }
     </ul>
@@ -26,12 +52,11 @@ import { mainMenu } from "../data/menus.js";
 <!-- Desktop Menu -->
 <ul class="hidden md:flex text-gray-700 dark:text-gray-300 py-4">
     {
-        mainMenu.map((link) => (
-            <li><a class="px-4 hover:text-gray-800" href={link.url}>{link.name}</a></li>
+        menuitems.map((link) => (
+            <li><a class={`px-4 hover:text-gray-400 ${pathname === link.url ? 'text-gray-500' : ''}`} href={link.url}>{link.name}</a></li>
         ))
     }
 </ul>
-
 
 <script>
     // WHen document dom loaded, get the hamburger button and the mobile menu
