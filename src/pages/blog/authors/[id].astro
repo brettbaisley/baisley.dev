@@ -14,8 +14,8 @@ const { author } = Astro.props;
 const { Content } = await render(author);
 ---
 <MainLayout 
-    title={`Brett Baisley | Blog | ${author.data.display_name}`}
-    heading={author.data.display_name}
+    title={`Brett Baisley | Blog | ${author.data.first_name} ${author.data.last_name}`}
+    heading=`${author.data.first_name} ${author.data.last_name}`
     subheading={author.data.role}
 >
     <div>
