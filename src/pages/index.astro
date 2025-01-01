@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Sectionhead from "../components/sectionhead.astro";
 
 const apps = [
     {
@@ -33,11 +34,11 @@ const apps = [
 ]
 ---
 
-<MainLayout 
-    title="Brett Baisley | Home"
-    heading="Welcome"  
-    subheading="This is my personal page for exploration and innovation."
->
+<MainLayout title="Brett Baisley | Home">
+    <Sectionhead>
+        <Fragment slot="heading">Welcome</Fragment>
+        <Fragment slot="subheading">This is my personal page for exploration and innovation.</Fragment>
+    </Sectionhead>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 ">
         {
             apps.map((app) => (

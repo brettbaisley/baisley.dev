@@ -7,10 +7,8 @@ import Footer from '../components/Footer.astro';
 
 export interface Props {
   title: string;
-  heading: string;
-  subheading: string;
 }
-const { title, heading, subheading } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,8 +18,7 @@ const { title, heading, subheading } = Astro.props;
   <body class="bg-white dark:bg-gray-950">
     <SiteHeader />
     <main class="container mx-auto p-4 py-12">
-      { heading && <h1 class="text-5xl mb-4 tracking-tight font-extrabold text-black dark:text-white">{heading}</h1> }
-      { subheading && <h2 class="text-xl text-gray-600 dark:text-gray-300">{subheading}</h2> }
+    
       <slot />
     </main>
     <Footer />

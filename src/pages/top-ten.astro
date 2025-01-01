@@ -1,5 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Sectionhead from "../components/sectionhead.astro";
+
 import { Image } from "astro:assets";
 import LSLogo from "../assets/images/late-show-logo.jpeg";
 
@@ -57,11 +59,11 @@ const topTenList = [
 ];
 ---
 
-<MainLayout
-    title="Brett Baisley | Top Ten List"
-    heading="Top Ten List"
-    subheading="My Late Show with David Letterman's winning top ten list entry."
->
+<MainLayout title="Brett Baisley | Top Ten List">
+    <Sectionhead>
+        <Fragment slot="heading">Top Ten List</Fragment>
+        <Fragment slot="subheading">My Late Show with David Letterman's winning top ten list entry.</Fragment>
+    </Sectionhead>
     <article class="max-w-[85ch] mx-auto mt-8">
         <header>
             <Image

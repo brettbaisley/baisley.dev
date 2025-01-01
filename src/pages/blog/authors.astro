@@ -1,13 +1,16 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import Sectionhead from "../../components/sectionhead.astro";
+
 import { getCollection } from "astro:content";
 const authors = await getCollection("authors");
 ---
-<MainLayout 
-  title="Brett Baisley | Blog | Authors"
-  heading="Authors"
-  subheading="Bio pages of all authors of Brett's Blog."
->
+<MainLayout title="Brett Baisley | Blog | Authors">
+    <Sectionhead>
+        <Fragment slot="heading">Authors</Fragment>
+        <Fragment slot="subheading">Bio pages of all authors of Brett's Blog.</Fragment>
+    </Sectionhead>
+
 {
     authors.map((author) => {
         return (

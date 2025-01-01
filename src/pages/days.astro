@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Sectionhead from "../components/sectionhead.astro";
 
 const occasion_list = [
         ["Mateo's Birthday", "12-15"],
@@ -12,11 +13,11 @@ const occasion_list = [
 
 ---
 
-<MainLayout  
-    title="Brett Baisley | Days Until"
-    heading="Days Until"
-    subheading="This is a page for my kids to show how long until a few special days."
->
+<MainLayout title="Brett Baisley | Days Until">
+    <Sectionhead>
+        <Fragment slot="heading">Days Until</Fragment>
+        <Fragment slot="subheading">This is a page for my kids to show how long until a few special days.</Fragment>
+    </Sectionhead>
     <div class="flex flex-col items-center justify-evenly my-8">
         <div class="occasions flex gap-4 overflow-x-auto w-full scheme-light dark:scheme-dark pb-2">
             {
@@ -73,53 +74,5 @@ const occasion_list = [
  
     occasions.forEach((occasion) => {
         occasion.addEventListener('click', handleClick);
-    });
-
-    // const calculate_easter = (year) => {
-    //     let a = year % 19;
-    //     let b = Math.floor(year / 100);
-    //     let c = year % 100;
-    //     let d = Math.floor(b / 4);
-    //     let e = b % 4;
-    //     let f = Math.floor((b + 8) / 25);
-    //     let g = Math.floor((b - f + 1) / 3);
-    //     let h = (19 * a + b - d - g + 15) % 30;
-    //     let i = Math.floor(c / 4);
-    //     let k = c % 4;
-    //     let l = (32 + 2 * e + 2 * i - h - k) % 7;
-    //     let m = Math.floor((a + 11 * h + 22 * l) / 451);
-    //     let month = Math.floor((h + l - 7 * m + 114) / 31);
-    //     let day = ((h + l - 7 * m + 114) % 31) + 1;
-    //     return new Date(year, month -1, day);
-    // }
-
-
-
-    // const addButton = (occasionText, occasionDate) => {
-    //     const str_year = occasionDate.getFullYear();
-    //     const str_month = (occasionDate.getMonth() + 1).toString().padStart(2, '0');
-    //     const str_day = occasionDate.getDate().toString().padStart(2, '0');
-        
-    //     const button = document.createElement("button");
-    //     button.value = `${str_year}-${str_month}-${str_day}`;
-    //     button.textContent = occasionText;
-    //     button.addEventListener('click', handleClick);
-    //     occasions.appendChild(button);
-
-    // }
-
-    // Add Easter button
-    // let easterDate = calculate_easter(today.getFullYear());
-    // if (easterDate < today) {
-    //     easterDate = calculate_easter(today.getFullYear() + 1);
-    // }
-
-
-
-
-
-
-
-
-    
+    });    
 </script>
