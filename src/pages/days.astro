@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Sectionhead from "../components/sectionhead.astro";
+import Button from "../components/ui/Button.astro";
 
 const occasion_list = [
         ["Mateo's Birthday", "12-15"],
@@ -22,7 +23,7 @@ const occasion_list = [
         <div class="occasions flex gap-4 overflow-x-auto w-full scheme-light dark:scheme-dark pb-2">
             {
                 occasion_list.map((occasion) => (
-                    <button class="occasion py-2 px-4 flex-none rounded text-white dark:text-black bg-purple-600 dark:bg-purple-400" value={occasion[1]}>{occasion[0]}</button>
+                    <Button class="occasion 0" value={occasion[1]}>{occasion[0]}</Button>
                 ))
             }
         </div>

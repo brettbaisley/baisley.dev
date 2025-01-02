@@ -1,4 +1,5 @@
 ---
+import Link from './ui/Link.astro';
 const menuitems = [
     { 
         name: "Home",
@@ -38,7 +39,7 @@ console.log(pathname);
         {
             menuitems.map((link) => (
                 <li class="border-t-1 m-0">
-                    <a class={`block p-8 text-xl hover:text-gray-600 ${pathname === link.url ? 'active' : ''}`} href={link.url}>{link.name}</a>
+                    <Link class={`block p-8 text-xl hover:text-gray-600 ${pathname === link.url ? 'active' : ''}`} href={link.url}>{link.name}</Link>
                 </li>
             ))
         }
@@ -53,7 +54,7 @@ console.log(pathname);
 <ul class="hidden md:flex text-gray-700 dark:text-gray-300 py-4">
     {
         menuitems.map((link) => (
-            <li><a class={`px-4 hover:text-gray-400 ${pathname === link.url ? 'text-gray-500' : ''}`} href={link.url}>{link.name}</a></li>
+            <li><Link class={`px-4 hover:text-gray-400 ${pathname === link.url ? 'text-gray-500' : ''}`} href={link.url}>{link.name}</Link></li>
         ))
     }
 </ul>
