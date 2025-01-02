@@ -28,7 +28,7 @@ console.log(pathname);
 ---
 
 <!-- Mobile Menu -->
- <nav>
+ <nav aria-label="Primary">
     <button class="open-menu dark:text-white cursor-pointer p-4 font-bold text-2xl md:hidden">
         <i class="fal fa-bars"></i>
     </button>
@@ -39,7 +39,7 @@ console.log(pathname);
         {
             menuitems.map((link) => (
                 <li class="border-t-1 m-0">
-                    <Link class={`block p-8 text-xl hover:text-gray-600 ${pathname === link.url ? 'active' : ''}`} href={link.url}>{link.name}</Link>
+                    <Link class={`block p-8 text-xl hover:text-gray-600 ${pathname === link.url ? 'active' : ''}`} href={link.url} aria-label={link.name}>{link.name}</Link>
                 </li>
             ))
         }
