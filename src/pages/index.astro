@@ -3,32 +3,34 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Sectionhead from "../components/Sectionhead.astro";
 import Link from "../components/ui/Link.astro";
 
+import { Icon } from 'astro-icon/components'
+
 const apps = [
     {
         title: "Blog",
         url: "/blog/",
-        icon: "fal fa-blog",
+        icon: "blog",
         description: "Just a small personal blog that doesn't really contain anything useful ... yet!",
         tags: ["Astro"]
     },
     {
         title: "Days Until",
         url: "/days",
-        icon: "fal fa-calendar-day",
+        icon: "calendar-day",
         description: "An Azure static web app (SWA) built to allow my kids to see how long until a few special days.",
         tags: ["HTML", "CSS", "Javascript"]
     },
     {
         title: "Gifts",
         url: "http://gifts.baisley.dev",
-        icon: "fal fa-gift",
+        icon: "gift",
         description: "A registry/wish-list style React app, to remember some gifts my kids said they wanted.",
         tags: ["React", "CosmosDB"]
     },
     {
         title: "Top-Ten",
         url: "/top-ten",
-        icon: "fal fa-list-ol",
+        icon: "list-ol",
         description: "My Late Show with David Letterman's winning top ten list entry.",
         tags: ["HTML"]
     }
@@ -44,7 +46,10 @@ const apps = [
         {
             apps.map((app) => (
                 <li class="flex flex-col gap-2 shadow-md border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-900">
-                    <h2 class="text-2xl text-gray-800 dark:text-gray-200"><i class={app.icon}></i> <Link href={app.url} style="primary">{app.title}</Link></h2>
+                    <h2 class="text-2xl text-gray-800 dark:text-gray-200">
+                        <Icon name={app.icon} class="inline-block" />
+                        <Link href={app.url} style="primary">{app.title}</Link>
+                    </h2>
                     <p class="my-2 text-gray-500 dark:text-gray-500">{app.description}</p>
                     <div>
                         {
