@@ -28,7 +28,7 @@ allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
           </time>
           <p class="mt-2 text-xl text-gray-800 dark:text-gray-200">{post.data.title}</p>
           <p class="mt-2 mb-4 line-clamp-3 text-sm text-gray-500">{post.data.description}</p>
-          <Link href={`/blog/${post.id}/`} class="text-gray-200">Read More</Link>
+          <Link href={`/blog/${post.id}/`} class="text-gray-200 link-with-arrow">Read More</Link>
         </li>
         );
       })
