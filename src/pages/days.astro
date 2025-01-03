@@ -3,13 +3,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Sectionhead from "../components/Sectionhead.astro";
 import Button from "../components/ui/Button.astro";
 
+import { Icon } from 'astro-icon/components';
+
 const occasion_list = [
-        ["Mateo's Birthday", "12-15"],
-        ["Lucas's Birthday", "01-18"],
-        ["Mom's Birthday", "06-15"],
-        ["Dad's Birthday", "04-21"],
-        ["Christmas", "12-25"],
-        ["Halloween", "10-31"],
+        ["Mateo's Birthday", "12-15", "cake-candles"],
+        ["Lucas's Birthday", "01-18", "cake-candles"],
+        ["Mom's Birthday", "06-15", "cake-candles"],
+        ["Dad's Birthday", "04-21", "cake-candles"],
+        ["Christmas", "12-25", "tree-christmas"],
+        ["Halloween", "10-31", "jack-o-lantern"],
     ];
 ---
 
@@ -19,10 +21,13 @@ const occasion_list = [
         <Fragment slot="subheading">This is a page for my kids to show how long until a few special days.</Fragment>
     </Sectionhead>
     <div class="flex flex-col items-center justify-evenly my-8">
-        <div class="occasions flex gap-4 overflow-x-auto w-full scheme-light dark:scheme-dark pb-2">
+        <div class="occasions flex flex-nowrap gap-4 overflow-x-auto w-full scheme-light dark:scheme-dark pb-2">
             {
                 occasion_list.map((occasion) => (
-                    <Button class="occasion 0" value={occasion[1]}>{occasion[0]}</Button>
+                    <Button class="occasion whitespace-nowrap" value={occasion[1]}>
+                        <Icon name={occasion[2]} class="inline-block mr-1 mb-1" />
+                        {occasion[0]}
+                    </Button>
                 ))
             }
         </div>
@@ -32,10 +37,6 @@ const occasion_list = [
             <p id="days" class="text-9xl text-gray-950 dark:text-gray-200 text-center">&nbsp;</p>
             <p id="slug" class="text-xl text-gray-600 dark:text-gray-400 text-center">&nbsp;</p>
         </div>
-
-        <footer class="text-gray-500 dark:text-gray-500">
-            Made with ❤️ for my two boys.
-        </footer>
     </div>
 
 </MainLayout>
