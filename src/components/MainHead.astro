@@ -25,8 +25,8 @@ const { title } = Astro.props;
           crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
           // onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DON'T ADD anything to the sdk.queue -- As they won't get called)
           // sri: false, // Custom optional value to specify whether fetching the snippet from integrity file and do integrity check
-          cfg: { // Application Insights Configuration
-            connectionString: "InstrumentationKey=0e6fd5ad-b398-4c4f-919f-ca8958cb063f;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=ff537dcf-4f99-45f1-9a4a-2e4fbab54ec0"
+            cfg: { // Application Insights Configuration
+            connectionString: import.meta.env.APPINSIGHTS_CONNECTION_STRING
         }});
         </script>
 </head>
