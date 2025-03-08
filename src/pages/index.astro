@@ -3,34 +3,37 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Sectionhead from "../components/Sectionhead.astro";
 import Link from "../components/ui/Link.astro";
 
-import { Icon } from 'astro-icon/components'
+import SVGBlog from '../assets/icons/blog.svg';
+import SVGCalendar from '../assets/icons/calendar-day.svg';
+import SVGGift from '../assets/icons/gift.svg';
+import SVGList from '../assets/icons/list-ol.svg';
 
 const apps = [
     {
         title: "Blog",
         url: "/blog/",
-        icon: "blog",
+        icon: SVGBlog,
         description: "Just a small personal blog that doesn't really contain anything useful ... yet!",
         tags: ["Astro"]
     },
     {
         title: "Days Until",
         url: "/days",
-        icon: "calendar-day",
+        icon: SVGCalendar,
         description: "An Azure static web app (SWA) built to allow my kids to see how long until a few special days.",
         tags: ["HTML", "CSS", "Javascript"]
     },
     {
         title: "Gifts",
         url: "http://gifts.baisley.dev",
-        icon: "gift",
+        icon: SVGGift,
         description: "A registry/wish-list style React app, to remember some gifts my kids said they wanted.",
         tags: ["React", "CosmosDB"]
     },
     {
         title: "Top-Ten",
         url: "/top-ten",
-        icon: "list-ol",
+        icon: SVGList,
         description: "My Late Show with David Letterman's winning top ten list entry.",
         tags: ["HTML"]
     }
@@ -47,7 +50,7 @@ const apps = [
             apps.map((app) => (
                 <li class="flex flex-col gap-2 shadow-md border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-900">
                     <h2 class="text-2xl text-gray-800 dark:text-gray-200">
-                        <Icon name={app.icon} class="inline-block" />
+                        <app.icon width={36} height={36} class="dark:fill-white inline mr-2" />
                         <Link href={app.url} style="primary">{app.title}</Link>
                     </h2>
                     <p class="my-2 text-gray-500 dark:text-gray-500">{app.description}</p>

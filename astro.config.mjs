@@ -1,18 +1,19 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-import icon from "astro-icon";
 
 export default defineConfig({
     site: 'https://baisley.dev',
     integrations: [
         sitemap(),
-        icon(),
     ],
     vite: {
         plugins: [
             tailwindcss()
         ]
+    },
+    experimental: {
+        svg: true,
     }
 });
 
