@@ -1,4 +1,12 @@
 ---
+title: ✨ Winning the 2024 Morgan Stanley GenAI Hackathon
+subtitle: People's Choice Award Winner
+pubDate: 2025-08-11
+description: How our AI-powered alert assistant won the People’s Choice Award at the 2024 Morgan Stanley GenAI Hackathon — cutting recovery time, boosting reliability, and showing the power of Generative AI in action.
+author: brett-baisley
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
 ---
 
 # ✨ Winning the 2024 Morgan Stanley GenAI Hackathon – People’s Choice Award
