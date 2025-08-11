@@ -9,8 +9,6 @@ image:
     alt: 'The Astro logo on a dark background with a pink glow.'
 ---
 
-# ✨ Winning the 2024 Morgan Stanley GenAI Hackathon – People’s Choice Award
-
 I’m thrilled to share that my team and I won the **People’s Choice Award** at the **2024 Morgan Stanley Generative AI Hackathon** — an incredible event that brought together some of the brightest minds across the firm to explore how AI can transform the way we work.
 
 Our winning project tackled a challenge that every production support engineer knows too well:  
