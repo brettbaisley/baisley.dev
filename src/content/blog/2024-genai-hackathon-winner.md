@@ -16,7 +16,7 @@ I’m thrilled to share that my team and I won the **People’s Choice Award** a
 Our winning project tackled a challenge that every production support engineer knows too well:  
 When an alert fires, finding the correct **resolution steps** can take precious minutes — sometimes longer — as operators dig through documentation, wikis, and past incident notes.
 
----
+
 
 ## Our Idea: AI-Powered Alert Resolution at Your Fingertips
 
@@ -28,7 +28,7 @@ Just actionable steps — instantly.
 
 This means that when an alert appears, the operator already has the **exact instructions they need to troubleshoot and recover** — saving time, reducing errors, and improving overall reliability.
 
----
+
 
 ## Four Rounds of Judging – and a Big Win
 
@@ -38,7 +38,7 @@ We were honored to present our project to **senior-level executives**, who saw t
 
 When voting opened for the **People’s Choice Award**, our project resonated with the audience — and we took home the win!
 
----
+
 
 ## Under the Hood – How It Works
 
@@ -50,19 +50,19 @@ Our solution combined:
 
 The result? A **self-service resolution assistant** for operators — like having a subject matter expert available 24/7.
 
----
+
 
 ## Why This Matters
 
 This project demonstrated not only how **Generative AI** can accelerate problem-solving, but also how **practical AI applications** can directly improve operational resilience. For production support engineers, every minute counts — and our solution helps reclaim those minutes.
 
----
+
 
 ## Looking Ahead
 
 The hackathon win was a huge honor, but for me, it’s also a testament to the potential of **AI-driven automation** in enterprise environments. I’m excited to continue exploring ways to combine AI, automation, and engineering best practices to make systems smarter, faster, and more reliable.
 
----
+
 
 **Skills Highlighted in This Project:**
 
